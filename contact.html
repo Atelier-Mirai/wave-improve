@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- 文字コードの指定 -->
+    <meta charset="utf-8">
+
+    <!-- ページのタイトル -->
+    <title>お問い合わせ - WAVE</title>
+
+    <!-- ファビコンの指定 https://ao-system.net/favicongenerator/ -->
+    <link rel="icon" href="images/favicon.ico" type="image/ico">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon-180x180.webp" type="image/png" sizes="180x180">
+
+    <!-- 検索時に表示される、ウェブサイトの要約文 -->
+    <meta name="description" content="概ね80文字前後のサイトの紹介文が、検索時に表示されます。">
+
+    <!-- ビューポート -->
+    <meta name="viewport" content="width=device-width">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Hachi+Maru+Pop&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css">
+
+    <!-- 自分で作ったスタイルシート -->
+    <link rel="stylesheet" href="style.css">
+  </head>
+
+  <body class="post">
+    <header>
+      <img src="images/logo.webp" alt="ロゴマーク"><a href="index.html">WAVE</a>
+    </header>
+
+    <nav>
+      <ul>
+        <!-- fa-lgは1.33倍、la-2xは2倍の大きさ、fa-fwは横に少し間隔が空く -->
+        <!-- 2021年最新版、Font Awesome アイコンの使い方と便利な機能のまとめ -->
+        <!-- https://coliss.com/articles/build-websites/operation/work/font-awesome-guide-and-useful-tricks.html -->
+        <li><a href="index.html"><i class="fas fa-home fa-lg fa-fw"></i>トップ</a>
+        </li>
+        <li><a href="about.html"><i class="fab fa-pagelines fa-lg fa-fw"></i>サイトについて</a></li>
+        <li><a href="contact.html"><i class="far fa-envelope fa-lg fa-fw"></i>お問い合わせ</a></li>
+      </ul>
+    </nav>
+
+    <article>
+      <h1>お問い合わせ</h1>
+
+      <p>
+        ご意見、ご感想などがございましたら、以下の欄にご記入の上、送信してください。
+        記事に関するご質問などもお気軽にお寄せください。
+      </p>
+
+      <!-- <form method="post" action="success.html" netlify="netlify">
+        <p>
+          <label>名前：</label>
+          <input type="text" name="name" required="required">
+        </p>
+        <p>
+          <label>メールアドレス：</label>
+          <input type="email" name="email" required="required">
+        </p>
+        <p>
+          <label>コメント：</label>
+          <textarea name="comment" required="required"></textarea>
+        </p>
+        <p>
+          <input type="submit" value="送信">
+        </p>
+      </form> -->
+
+      <form action="/success" method="post" name="contact" netlify-honeypot="bot-field" data-netlify="true">
+        <input type="hidden" name="form-name" value="contact">
+        <label class="hidden" for="subject">件名</label>
+        <input type="hidden" id="subject" name="subject"  value="Webサイトから「お問い合わせ」がありました。">
+        <label class="hidden" for="referrer_url">お問い合わせ前に見ていたURL</label>
+        <input  type="hidden" id="referrer_url" name="referrer_url"value="">
+        <script>
+          document.getElementById("referrer_url").value = document.referrer;
+        </script>
+
+        <p class="hidden">
+          <label>Don’t fill this out if you're human:
+            <input name="bot-field">
+          </label>
+        </p>
+        <p>
+          <textarea autocapitalize="none" autocorrect="off" id="message" name="message" placeholder="とっても為になりました。ありがとうございます。" required="required"></textarea>
+          <label class="name" for="message">お問い合わせ内容</label>
+        </p>
+        <p>
+          <input type="text" autocomplete="name" class="input" id="name" name="name" placeholder="山田 太郎" required="required">
+          <label class="name" for="name">お名前</label>
+        </p>
+        <p>
+          <input type="email" autocomplete="email" class="input" id="email" name="email" placeholder="taro@example.com" required="required">
+          <label class="name" for="email">メールアドレス</label>
+        </p>
+        <p>
+          <input type="tel" autocomplete="tel" class="input" id="tel" maxlength="11" minlength="7" name="tel" pattern="^(\d)*$" placeholder="0523734649">
+          <label class="name" for="tel">電話番号</label>
+        </p>
+        <p class="annotation">
+          <span class="required">※</span> は、必須項目です。
+        </p>
+        <input type="submit" name="" value="送信">
+      </form>
+    </article>
+
+    <footer>&copy; WAVE</footer>
+  </body>
+</html>
