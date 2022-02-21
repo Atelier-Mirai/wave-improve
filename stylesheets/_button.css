@@ -16,12 +16,20 @@
   }
 }
 
+/* clamp 関数により 可変フォントサイズの指定する */
+.button {
+  /* 最小値 16px (画面幅400px) */
+  /* 通常    4vw (画面幅の4%) */
+  /* 最大値 24px (画面幅600px) */
+  font-size: clamp(16px, 4vw, 24px);
+}
+
 /* CSSボタンデザイン120個以上！どこよりも詳しく作り方を解説！ */
 /* https://jajaaan.co.jp/css/button/ */
 
 /* ボタンの基本形 */
 .button {
-  font-weight: 700;
+  font-weight: bold;
   line-height: 1.5;
   position: relative;
   display: inline-block;
@@ -91,7 +99,8 @@ a.gold.button {
   border-radius: 0;
   background: linear-gradient(-90deg, #ffd75b 0%, #fff5a0 30%, #fffabe 40%, #ffffdb 50%, #fff5a0 70%, #fdd456 100%);
   text-shadow: -1px -1px 1px #ffffd9;
-  font-size: 16px;
+  padding: 0.4rem 0.6rem;
+  letter-spacing: 0;
 }
 
 a.gold.button span {

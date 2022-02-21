@@ -3,20 +3,40 @@
 =============================================================================*/
 
 /*-----------------------------------------------------------------------------
+  基本設定
+-----------------------------------------------------------------------------*/
+body {
+  /* テキストの自動拡大を無効化 */
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+}
+
+* {
+  margin: 0;
+}
+
+img {
+  width: 100%;
+  height: auto;
+}
+
+/*-----------------------------------------------------------------------------
   ページ全体の設定
 -----------------------------------------------------------------------------*/
 body {
   display: grid;
   grid-template-columns: 20px 1fr 20px;
   grid-template-rows:
-              [head]    100px
-              [main]    auto
-              [submenu] auto
-              [foot]    100px;
+              /* [head]   100px */
+              [vegas]  100vh
+              [title]  auto
+              [sub]    auto
+              [recent] auto
+              [zoo]    auto
+              [sea]    auto
+              [foot]   auto;
   row-gap: 20px;
-  font-family: 'Kaisei Opti', serif;
-  /* テキストの自動拡大を無効化 */
-  text-size-adjust: none;
+  font-family: 'Hachi Maru Pop', cursive;
 }
 
 /* パーツの配置 */
@@ -32,15 +52,17 @@ body > * {
   /*-----------------------------------------------------------------------------
     ページ全体の設定
   -----------------------------------------------------------------------------*/
+  /* ページ全体の設定 */
   body {
     grid-template-columns: 0.2fr repeat(6, 1fr) 0.2fr;
     column-gap: 5%;
     grid-template-rows:
-                        [head]         100px
-                        [main submenu] auto
-                        [foot]         100px;
+                        /* [head]      100px */
+                        [vegas]     100vh
+                        [title sub] auto
+                        [recent]    auto
+                        [zoo]       auto
+                        [sea]       auto
+                        [foot]      100px;
   }
-
-  .main    { grid-column: 2 / span 4 }
-  .submenu { grid-column: 6 / span 2 }
 }

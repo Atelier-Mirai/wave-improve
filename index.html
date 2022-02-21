@@ -13,14 +13,28 @@
 
     <!-- ファビコンの指定 https://ao-system.net/favicongenerator/ -->
     <link rel="icon" href="images/favicon.ico" type="image/ico">
-    <link rel="apple-touch-icon" href="images/apple-touch-icon-180x180.webp" type="image/png" sizes="180x180">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon-180x180.png" type="image/png" sizes="180x180">
 
     <!-- 検索時に表示される、ウェブサイトの要約文 -->
-    <meta name="description" content="概ね80文字前後のサイトの
-    紹介文が、検索時に表示されます。">
+    <meta name="description" content="検索時に表示されるサイト紹介文(概ね80文字前後)">
+    <!-- URL正準化 -->
+    <link rel="canonical" href="https://wave-improve.netlify.app/">
+    <!-- SNS 対応 -->
+    <meta property="og:site_name"    content="WAVE"
+    <meta property="og:title"        content="WAVE">
+    <meta property="og:description"  content="WAVEの概要文">
+    <meta property="og:url"          content="https://wave-improve.netlify.app/">
+    <meta property="og:type"         content="website">
+    <meta property="og:locale"       content="ja_JP">
+    <meta property="og:fbappid"      content="*******fbappid*******">
+    <meta property="og:image"        content="https://wave-improve.netlify.app/room.webp">
+    <meta property="og:image:width"  content="1600">
+    <meta property="og:image:height" content="1066">
+    <meta property="twitter:card"    content="summary_large_image">
 
     <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Hachi+Maru+Pop&display=swap" rel="stylesheet">
 
     <!-- Font Awesome -->
@@ -28,16 +42,19 @@
 
     <!-- Magnific Popup -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.css">
-    <link rel="stylesheet" href="magnific-popup-custom.css">
+    <link rel="stylesheet" href="vendor/magnific-popup-custom.css">
 
     <!-- slick-carousel -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css">
-    <link rel="stylesheet" href="slick-custom.css">
+    <link rel="stylesheet" href="vendor/slick-custom.css">
 
     <!-- Vegas - Fullscreen Backgrounds and Slideshows. -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/vegas/2.5.4/vegas.min.css">
-    <link rel="stylesheet" href="vegas-custom.css">
+    <link rel="stylesheet" href="vendor/vegas-custom.css">
+
+    <!-- Smooth Scroll -->
+    <script src="https://cdn.jsdelivr.net/npm/smooth-scroll@16.1.3/dist/smooth-scroll.polyfills.min.js"></script>
 
     <!-- PWA (Progressive Web Apps) -->
     <meta name="apple-mobile-web-app-capable" content="yes">
@@ -48,47 +65,34 @@
     <script src="app.js"></script>
 
     <!-- 自分で作ったスタイルシート -->
-    <link rel="stylesheet" href="colors.css">
-    <link rel="stylesheet" href="button.css">
-    <link rel="stylesheet" href="scroll.css">
-    <link rel="stylesheet" href="page-top.css">
-    <link rel="stylesheet" href="glow-text.css">
-    <link rel="stylesheet" href="navigation.css">
-    <link rel="stylesheet" href="utility.css">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="stylesheets/master.css">
   </head>
 
   <!-- 表示したい内容・出し物・コンテンツを記述します -->
   <body class="top">
-    <!-- デスクトップ用ナビゲーションメニュー -->
-    <header id="desktop-header" class="hidden">
-      <div class="logo">
-        <img src="images/logo.webp" alt="ロゴマーク"><a href="index.html">WAVE</a>
-      </div>
-      <nav>
-        <ul>
-          <!-- fa-lgは1.33倍、la-2xは2倍の大きさ、fa-fwは横に少し間隔が空く -->
-          <!-- 2021年最新版、Font Awesome アイコンの使い方と便利な機能のまとめ -->
-          <!-- https://coliss.com/articles/build-websites/operation/work/font-awesome-guide-and-useful-tricks.html -->
-          <li><a href="index.html"><i class="fa-solid fa-house fa-lg fa-fw"></i>トップ</a></li>
-          <li><a href="about.html"><i class="fa-brands fa-pagelines fa-lg fa-fw"></i>サイトについて</a></li>
-          <li><a href="contact.html"><i class="fa-solid fa-envelope fa-lg fa-fw"></i>お問い合わせ</a></li>
-        </ul>
-      </nav>
-    </header>
 
-    <!-- モバイル用ナビゲーションメニュー -->
-    <header id="mobile-header" class="hidden">
-      <!-- ハンバーガーメニュー -->
-      <div class="open-button">
-        <!-- CSS で spanタグをハンバーガーの線に変える -->
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
+    <!-- ハンバーガーメニュー -->
+    <div class="open-button">
+      <!-- CSS で spanタグをハンバーガーの線に変える -->
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
+    <!-- ヘッダー (ロゴとナビゲーションメニュー) -->
+    <header class="header hidden">
+      <!-- ロゴ -->
+      <a class="logo" href="index.html">
+        <img src="images/logo.webp" alt="ロゴマーク">
+        <span>WAVE</span>
+      </a>
+
       <!-- ナビゲーションメニュー -->
-      <nav>
-        <ul id="mobile-menu">
+      <!-- fa-lgは1.33倍、la-2xは2倍の大きさ、fa-fwは横に少し間隔が空く -->
+      <!-- 2021年最新版、Font Awesome アイコンの使い方と便利な機能のまとめ -->
+      <!-- https://coliss.com/articles/build-websites/operation/work/font-awesome-guide-and-useful-tricks.html -->
+      <nav class="menu">
+        <ul>
           <li><a href="index.html"><i class="fa-solid fa-house fa-lg fa-fw"></i>トップ</a></li>
           <li><a href="about.html"><i class="fa-brands fa-pagelines fa-lg fa-fw"></i>サイトについて</a></li>
           <li><a href="contact.html"><i class="fa-solid fa-envelope fa-lg fa-fw"></i>お問い合わせ</a></li>
@@ -96,28 +100,26 @@
       </nav>
     </header>
 
-    <!-- 文字を煌めかせるためのCSS -->
-    <style media="screen">
-      .glow.text {
-        text-shadow: 0 0 10px #fef4f4, 0 0 15px #fef4f4;
-      }
-    </style>
     <!-- 全画面で絵が切り替わるヒーローイメージ -->
     <div id="vegas-slider">
+      <!-- 文字が煌めくタイトル(キャッチフレーズ) -->
       <h1 class="glow text">Best place to visit in the world</h1>
-      <a href="https://github.com/Atelier-Mirai/wave-html" class="gradient button">
+      <!-- グラデーションボタン -->
+      <a href="https://github.com/Atelier-Mirai/wave-improve" class="gradient button">
+        <!-- モバイル端末での閲覧時、二行に折り返す -->
         <span>ソースコードは<br class="mobile only">こちら</span>
       </a>
     </div>
 
-    <!-- スクロールを促す -->
+    <!-- スクロールを促す為のアニメーション -->
     <div class="scroll down">
       <span>Scroll</span>
     </div>
 
     <!-- 記事一覧 -->
-    <section class="recent">
-      <h2>最近の投稿</h2>
+    <section class="recent" id="recent">
+      <h2>最新記事</h2>
+
       <article>
         <a href="post01.html">
           <figure>
@@ -126,6 +128,8 @@
           <h3>スケッチが楽しくなるノート</h3>
         </a>
       </article>
+
+      <!-- タブにより、二つの記事を切り替える -->
       <article>
         <a href="post02.html#midori">
           <figure>
@@ -142,8 +146,10 @@
           <h3>小物と飾り棚の組み合わせ</h3>
         </a>
       </article>
+
+      <!-- 用意していない記事へのリンク無効化 -->
       <article>
-        <a href="post04.html" style="pointer-events: none;">
+        <a href="post04.html" class="link disable">
           <figure>
             <img src="images/chair.webp" alt="">
           </figure>
@@ -151,7 +157,7 @@
         </a>
       </article>
       <article>
-        <a href="post05.html" style="pointer-events: none;">
+        <a href="post05.html" class="link disable">
           <figure>
             <img src="images/tile.webp" alt="">
           </figure>
@@ -159,13 +165,15 @@
         </a>
       </article>
       <article>
-        <a href="post06.html">
+        <a href="post06.html" class="link disable">
           <figure>
             <img src="images/recipe.webp" alt="">
           </figure>
           <h3>美味しいオムレツのレシピ</h3>
         </a>
       </article>
+
+      <!-- 桜の花びらが舞う JavaScript の例 -->
       <article>
         <a href="sakura.html">
           <figure>
@@ -174,6 +182,8 @@
           <h3>青空と🌸</h3>
         </a>
       </article>
+
+      <!-- モーダルウィンドウの例 -->
       <article>
         <a href="modaal/index.html">
           <figure>
@@ -182,6 +192,8 @@
           <h3>モーダルウィンドウ</h3>
         </a>
       </article>
+
+      <!-- シャッフルテキストの例 -->
       <article>
         <a href="shuffle_text/index.html">
           <figure>
@@ -234,7 +246,7 @@
           </div>
           <div class="card">
             <img src="images/sea02.webp" alt="">
-            <h3>砂浜に打ち寄せる波</h3>
+            <h3>打ち寄せる波</h3>
           </div>
           <div class="card">
             <img src="images/sea03.webp" alt="">
@@ -254,40 +266,82 @@
           </div>
           <div class="card">
             <img src="images/sea07.webp" alt="">
-            <h3>幾星霜に耐えた老松</h3>
+            <h3>崖に立つ松</h3>
           </div>
         </div>
       </div>
     </section>
 
     <!-- フッター -->
-    <footer>
+    <footer class="footer">
       <!-- ページの先頭にスムーズスクロール -->
       <p id="page-top">
+        <!-- 金色のボタン -->
         <a href="#" class="gold button">
-          <span><i class="fa-solid fa-angles-up fa-lg fa-fw"></i>Page Top</span>
+          <span>
+            <i class="fa-solid fa-angles-up fa-lg fa-fw"></i>
+            <span class="computer only">Page Top</span>
+          </span>
         </a>
       </p>
-      &copy; WAVE
+
+      <!-- フッター ナビ -->
+      <nav class="footer_nav computer only">
+        <!-- ロゴ -->
+        <a href="#" class="logo">
+          <img src="images/logo.webp" alt="ロゴマーク">
+          <span>WAVE</span>
+        </a>
+
+        <!-- ナビ -->
+        <ul>
+          <li><a href="#"><i class="fa-solid fa-house-chimney"></i></a></li>
+          <li><a href="#recent">記事<br>一覧</a></li>
+          <li><a href="about.html">会社<br>案内</a></li>
+          <li><a href="contact.html">お問い<br>合わせ</a></li>
+        </ul>
+      </nav>
+
+      <!-- 住所・電話番号欄 -->
+      <address>
+        <p class="address">
+          名古屋市桜区桜町一丁目一番地 桜ビル一階
+        </p>
+        <p class="tel">
+          <a href="tel:052-373-4649">
+            <i class="fa-solid fa-phone fa-rotate-90 fa-lg"></i>
+            052-373-4649
+          </a>
+        </p>
+      </address>
+
+    <!-- 著作権表示 -->
+      <p class="copyright">
+        Copyright &copy; 令和四年 WAVE All rights reserved.
+      </p>
     </footer>
 
-    <!-- HTML要素を操作できるように JavaScript は 一番最後に書きます -->
-    <!-- jQuery -->
+    <!-- HTML要素を操作できるように JavaScript は 一番最後に書く。 -->
+    <!-- jQuery 機能豊富なJavaScriptライブラリ。HTMLドキュメントの走査や操作、イベント処理、アニメーション、Ajaxなどを、簡単にできる。 -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <!-- Magnific Popup -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
-    <script src="magnific-popup-custom.js"></script>
+    <script src="vendor/magnific-popup-custom.js"></script>
     <!-- Slick -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
-    <script src="slick-custom.js"></script>
+    <script src="vendor/slick-custom.js"></script>
     <!-- Vegas -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vegas/2.5.4/vegas.min.js"></script>
-    <script src="vegas-custom.js"></script>
+    <script src="vendor/vegas-custom.js"></script>
     <!-- page top -->
-    <script src="page-top.js"></script>
+    <script src="javascripts/page-top.js"></script>
     <!-- glow text-->
-    <script src="glow-text.js"></script>
+    <script src="vendor/glow-text.js"></script>
     <!-- navigation -->
-    <script src="navigation.js"></script>
+    <script src="javascripts/navigation.js"></script>
+
+    <script>
+      let scroll = new SmoothScroll('a[href*="#"]', { easing: 'easeInOutQuint' });
+    </script>
   </body>
 </html>

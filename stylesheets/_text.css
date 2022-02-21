@@ -1,0 +1,67 @@
+/*-----------------------------------------------------------------------------
+  テキストの配置
+-----------------------------------------------------------------------------*/
+
+/* 左寄せ指定
+-----------------------------------------------------------------------------*/
+.lefted.text {
+  text-align: left !important;
+}
+
+/* 中央そろえ指定
+-----------------------------------------------------------------------------*/
+.centered.text {
+  text-align: center !important;
+}
+
+/* 右寄せ指定
+-----------------------------------------------------------------------------*/
+.righted.text {
+  text-align: right !important;
+}
+
+/* 見出し
+-----------------------------------------------------------------------------*/
+/* CSS見出しデザイン参考100選 */
+/* https://jajaaan.co.jp/css/css-headline/ */
+
+.top h2 {
+  position: relative;
+  padding: 1rem 1.5rem;
+  box-shadow: 0 2px 14px rgba(0, 0, 0, .1);
+}
+
+.top h2:before,
+.top h2:after {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  content: '';
+  background-image: linear-gradient(135deg, #704308 0%, #ffce08 40%, #e1ce08 60%, #704308 100%);
+}
+
+.top h2:before {
+  top: 0;
+}
+
+.top h2:after {
+  bottom: 0;
+}
+
+/* 文字を光りながら出現させるためのCSS
+-----------------------------------------------------------------------------*/
+.glow.text span {
+  opacity: 0;
+}
+
+/* アニメーションで透過度を0から1に変化させ、text-shadowをつける */
+.glow.text.shine span {
+  animation: glow_anime_on 1s ease-out forwards;
+}
+
+@keyframes glow_anime_on {
+    0% { opacity:0; text-shadow: 0 0    0 #fff, 0 0    0 #fff; }
+   50% { opacity:1; text-shadow: 0 0 10px #fff, 0 0 15px #fff; }
+  100% { opacity:1; text-shadow: 0 0    0 #fff, 0 0    0 #fff; }
+}

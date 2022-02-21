@@ -6,20 +6,20 @@ const fixedAnimationForDesktop = () => {
   // 300px以上、スクロールしたら
   if (scroll >= 300) {
     // ヘッダーを表示
-    $("#desktop-header").removeClass("hidden");
-    $("#desktop-header").addClass("shown");
+    $(".header").removeClass("hidden");
+    $(".header").addClass("shown");
     // 上から現れるよう、動きのためのクラス付与
-    $("#desktop-header").removeClass("upward");
-    $("#desktop-header").addClass("downward");
+    $(".header").removeClass("upward");
+    $(".header").addClass("downward");
   }
   // そうでなければ
   else {
     // 画面上部に消えていく動きのためのクラス付与
-    $("#desktop-header").removeClass("downward");
-    $("#desktop-header").addClass("upward");
+    $(".header").removeClass("downward");
+    $(".header").addClass("upward");
     // ヘッダーを非表示
-    $("#desktop-header").removeClass("shown");
-    $("#desktop-header").addClass("hidden");
+    $(".header").removeClass("shown");
+    $(".header").addClass("hidden");
   }
 }
 
@@ -30,12 +30,11 @@ const fixedAnimationForMobile = () => {
 
   // 300px以上、スクロールしたら
   if (scroll >= 300) {
-    $("#mobile-header").removeClass("hidden");
     $(".open-button").addClass("appearance");
   }
   // そうでなければ
   else {
-    $("#mobile-header").addClass("hidden");
+    $(".header").addClass("hidden");
     $(".open-button").removeClass("appearance");
   }
 }
@@ -50,12 +49,12 @@ if (windowWidth <= 768) {
   // ハンバーガーボタンをクリックした際の処理
   $(".open-button").on("click", () => {
     $(".open-button").toggleClass("active");
-    $("#mobile-menu").toggleClass("active");
+    $(".header").toggleClass("hidden");
   });
   // リンクをクリックした際の処理
-  $("#mobile-menu li a").on("click", () => {
+  $(".header .menu li a").on("click", () => {
     $(".open-button").removeClass("active");
-    $("#mobile-menu").removeClass("active");
+    $(".header").removeClass("hidden");
     $(".open-button").removeClass("appearance");
   });
 } else {

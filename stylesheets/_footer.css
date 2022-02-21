@@ -1,0 +1,140 @@
+/*=============================================================================
+  モバイル版・デスクトップ版 共通の設定
+=============================================================================*/
+
+/*-----------------------------------------------------------------------------
+  フッター
+-----------------------------------------------------------------------------*/
+.footer {
+  margin-top: 100px;
+
+  grid-row: foot;
+  grid-column: 1 / -1;
+  justify-self: center;
+  align-self: center;
+  width: 100%;
+
+  /* 美しいグラデーションをCSSで実装 */
+  /* https://www.webcreatorbox.com/tech/css-gradient */
+  background: linear-gradient(45deg, #2ca9e128, #ffec4760) fixed, url('../images/sea02.jpg') 75% 75%;
+  background-size: cover;
+}
+
+.footer {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 72px auto;
+}
+
+.footer address {
+  grid-column: 1;
+  grid-row: 1;
+  align-self: center;
+  text-align: center;
+}
+
+.footer address .address {
+  font-size: clamp(14px, 3.5vw, 16px);
+}
+
+.footer address .tel {
+  font-size: clamp(18px, 4vw, 24px);
+}
+
+.footer .copyright {
+  grid-column: 1;
+  grid-row: 2;
+}
+
+.footer .copyright {
+  font-size: clamp(12px, 3vw, 15px);
+  background: var(--kurohairo);
+  color: var(--sakurairo);
+  line-height: 2;
+  text-align: center;
+}
+
+/*=============================================================================
+  デスクトップ版の設定
+=============================================================================*/
+@media (min-width: 768px) {
+  .footer {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 150px auto auto;
+    row-gap: 20px;
+  }
+
+  .footer .footer_nav {
+    grid-column: 1;
+    grid-row: 1;
+    justify-self: center;
+  }
+
+  .footer address {
+    grid-column: 1;
+    grid-row: 2;
+  }
+
+  .footer .copyright {
+    grid-column: 1;
+    grid-row: 3;
+  }
+
+  /*-----------------------------------------------------------------------------
+    フッター ナビ用
+  -----------------------------------------------------------------------------*/
+  .footer .footer_nav {
+    display: grid;
+    grid-template-columns: 0.2fr repeat(6, 1fr) 0.2fr;
+    grid-template-rows: auto;
+  }
+
+  /* ロゴ */
+  .footer .footer_nav .logo {
+    grid-column: 2;
+    grid-row: 1;
+    justify-self: start;
+    align-self: center;
+  }
+
+  /* フッター ナビ */
+  .footer .footer_nav ul {
+    grid-column: 4 / span 3;
+    grid-row: 1;
+    justify-self: end;
+    align-self: center;
+
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 1fr;
+    gap: 25px;
+
+    list-style: none;
+    padding: 0;
+  }
+
+  .footer .footer_nav ul li {
+    background-color: var(--kurohairo);
+    border-radius: 0%;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    width: 64px;
+    height: 64px;
+    transform: rotate(45deg);
+    overflow: hidden;
+  }
+
+  .footer .footer_nav ul li:hover {
+    background: var(--botaniro);
+  }
+
+  .footer .footer_nav ul li a {
+    transform: rotate(-45deg);
+    text-decoration: none;
+    font-size: 14px;
+    color: var(--sakurairo);
+    text-align: center;
+  }
+}

@@ -1,3 +1,22 @@
+/*-----------------------------------------------------------------------------
+  海の写真
+-----------------------------------------------------------------------------*/
+.sea {
+  grid-row: sea;
+  display: grid;
+}
+
+.sea h2,
+.sea p {
+  text-align: center;
+  font-weight: normal;
+  margin-bottom: 1rem;
+}
+
+.sea h3 {
+  font-size: 16px;
+}
+
 .slider-wrapper {
   grid-column: 2;
   max-width: 100%;

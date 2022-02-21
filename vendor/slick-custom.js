@@ -1,6 +1,6 @@
 $(".slider").slick({
-  slidesToShow: 3,         // 画面に見せるスライドの枚数
-  slidesToScroll: 3,       // 1回のスクロールで移動するスライドの枚数
+  slidesToShow: 5,         // 画面に見せるスライドの枚数
+  slidesToScroll: 1,       // 1回のスクロールで移動するスライドの枚数
   dots: true,              // 画面下部に案内用ドット（点）を表示
   arrows: true,            // 左右の矢印表示
   autoplay: true,          // 自動再生
@@ -11,14 +11,14 @@ $(".slider").slick({
     {
       breakpoint: 768,     // 端末の横幅が768px以下の見せ方
       settings: {
-        slidesToShow: 2,
-        slidesToScroll: 2,
+        slidesToShow: 3,
+        slidesToScroll: 1,
       }
     },
     {
       breakpoint: 428,     // 端末の横幅が428px以下の見せ方
       settings: {
-        slidesToShow: 1,
+        slidesToShow: 2,
         slidesToScroll: 1,
       }
     }
