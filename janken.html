@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>じゃんけんゲーム</title>
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" href="janken.css">
+  </head>
+
+  <body>
+    <header>
+      <h1>じゃんけんゲーム</h1>
+    </header>
+
+    <main>
+      <figure>
+        <img id="computer_hand_type" src="images/janken/guu.png">
+      </figure>
+
+      <p>
+        みんな知っているじゃんけん<br>
+        グー・チョキ・パー どれかを押してね
+      </p>
+
+      <div class="control_area">
+        <div class="player_hand_type">
+          <button id="guu"   value="0"></button>
+          <button id="choki" value="1"></button>
+          <button id="paa"   value="2"></button>
+        </div>
+        <div class="score_and_replay">
+          <p class="score">
+            <span id="win">0</span> 勝
+            <span id="lose">0</span> 敗
+          </p>
+          <button id="play" class="button">開始</button>
+        </div>
+      </div>
+    </main>
+
+    <article>
+      <div>
+        <p>
+          じゃんけんは、3種類の指の出し方（グー・パー・チョキ）で三すくみの関係を構成し、出した種類により勝敗を決める遊戯です。古来伝承されてきた虫拳などをもとに、明治期に九州で発明されたと言われています。
+        </p>
+        <p>
+          詳しくは<a href="https://ja.wikipedia.org/wiki/%E3%81%98%E3%82%83%E3%82%93%E3%81%91%E3%82%93">
+          ウィキペディア</a>を見てね。
+        </p>
+      </div>
+
+      <figure>
+        <figcaption>じゃんけん相関図</figcaption>
+        <img src="images/janken/janken.jpg" alt="じゃんけん説明図">
+        <ul>
+          <li>紙 ＞ 石 ：紙は石を包む</li>
+          <li>鋏 ＞ 紙 ：鋏は紙を切る</li>
+          <li>石 ＞ 鋏 ：石は鋏に克つ</li>
+        </ul>
+      </figure>
+    </article>
+
+    <footer>
+      <div class="container">
+        <nav>
+          <ul>
+            <li> <a href="index.html">トップに戻る</a></li>
+          </ul>
+        </nav>
+        <p>情報技術を夢の架け橋に</p>
+        <p>&copy; アトリヱ未來</p>
+      </div>
+    </footer>
+
+    <script src="janken.js"></script>
+  </body>
+</html>

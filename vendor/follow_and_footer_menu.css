@@ -1,0 +1,119 @@
+/*=============================================================================
+  固定フッター
+  gar-den.jp より
+=============================================================================*/
+/*-----------------------------------------------------------------------------
+  モバイル版
+-----------------------------------------------------------------------------*/
+#fixed_footer {
+  position: fixed;
+  width: 100%;
+  z-index: 1000;
+  bottom: -70px;
+  transition-property: all;
+  transition-duration: 0.3s;
+  transition-timing-function: ease;
+  transition-delay: 0.3s; }
+  #fixed_footer.active {
+    bottom: 0; }
+    #fixed_footer.active span {
+      display: inline-block;
+      margin: 6px 0; }
+  #fixed_footer nav {
+    bottom: -70px;
+    /* 各書籍へのリンク */
+    /* 電話をかける */ }
+    #fixed_footer nav ul {
+      overflow: hidden;
+      margin: 0 -1px;
+      padding: 0;
+      list-style: none;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-auto-flow: column; }
+      #fixed_footer nav ul li a {
+        vertical-align: middle;
+        text-align: center;
+        text-decoration: none;
+        display: block;
+        background: #0d0d0d;
+        padding-top: 12px;
+        color: #fef4f4;
+        font-size: 11px;
+        height: 60px;
+        border-left: 1px solid #fef4f4;
+        position: relative; }
+        #fixed_footer nav ul li a span {
+          display: inline-block;
+          margin: 12px 0; }
+      #fixed_footer nav ul li a::after {
+        content: "";
+        display: block;
+        border: 15px solid transparent;
+        border-left-color: #ffec47;
+        border-top-color: #ffec47;
+        width: 0;
+        height: 0;
+        position: absolute;
+        left: 0;
+        top: 0; }
+    #fixed_footer nav .telephone {
+      background: #0d0d0d;
+      text-align: center;
+      border-top: 1px solid #fef4f4; }
+      #fixed_footer nav .telephone a {
+        color: #fef4f4;
+        text-decoration: none;
+        width: 100%;
+        display: inline-block;
+        padding: 10px; }
+        #fixed_footer nav .telephone a small {
+          display: block;
+          font-size: 9px; }
+
+/*=============================================================================
+  追随メニュー
+  gar-den.jp より
+=============================================================================*/
+/* @media (min-width: 768px) { */
+@media (min-width: 76.8px) {
+  .follow_menu {
+    position: fixed;
+    right: 40px;
+    bottom: 200px;
+    z-index: 10000; }
+    .follow_menu ul {
+      list-style: none; }
+      .follow_menu ul li a {
+        font-size: 0.9rem;
+        text-align: center;
+        text-decoration: none;
+        color: #fef4f4;
+        display: block;
+        box-sizing: border-box;
+        width: 100px;
+        height: 100px;
+        padding: 10px 10px;
+        line-height: 20px;
+        border-radius: 50px;
+        border: 1px solid #ff251e;
+        background: #ff251e;
+        position: relative; }
+        .follow_menu ul li a:hover::after {
+          opacity: 1;
+          border-width: 7px; }
+      .follow_menu ul li a::after {
+        content: "";
+        display: block;
+        width: 98px;
+        height: 98px;
+        border: 0 solid #fef4f4;
+        border-radius: 50px;
+        position: absolute;
+        left: 0;
+        top: 0;
+        box-sizing: border-box;
+        opacity: 0;
+        transition-property: all;
+        transition-duration: 0.3s;
+        transition-timing-function: ease; } }
