@@ -1,0 +1,127 @@
+/*=============================================================================
+  入力フォーム用 スタイルシート
+  CSS疑似クラスを活用した、モダンでインタラクティブなフォームの作り方 より
+  https://ics.media/entry/200413/
+=============================================================================*/
+.pseudo-class-form.wrapper {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 24px; }
+  .pseudo-class-form.wrapper fieldset {
+    border: 0;
+    padding: 0; }
+  .pseudo-class-form.wrapper p {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 2rem;
+    position: relative; }
+    .pseudo-class-form.wrapper p:focus-within label.name {
+      -webkit-transform: translateY(0) scale(0.8);
+              transform: translateY(0) scale(0.8); }
+  .pseudo-class-form.wrapper label.name {
+    display: block;
+    order: 1;
+    -webkit-transition: -webkit-transform 0.2s;
+    transition: -webkit-transform 0.2s;
+    transition: transform 0.2s;
+    transition: transform 0.2s, -webkit-transform 0.2s;
+    -webkit-transform: translateY(32px) scale(1);
+            transform: translateY(32px) scale(1);
+    -webkit-transform-origin: 0 100%;
+            transform-origin: 0 100%;
+    padding: 7px;
+    font-size: 14px;
+    line-height: 1; }
+    @media (min-width: 768px) {
+      .pseudo-class-form.wrapper label.name {
+        -webkit-transform: translateY(34px) scale(1);
+                transform: translateY(34px) scale(1); } }
+  .pseudo-class-form.wrapper input,
+  .pseudo-class-form.wrapper textarea {
+    order: 2;
+    width: 100%;
+    border: none;
+    font-size: 16px;
+    padding: 8px;
+    border-bottom: 1px solid #333333;
+    background: rgba(255, 255, 255, 0.5); }
+    .pseudo-class-form.wrapper input:invalid,
+    .pseudo-class-form.wrapper textarea:invalid {
+      -webkit-box-shadow: none;
+              box-shadow: none; }
+      .pseudo-class-form.wrapper input:invalid ~ .error.message,
+      .pseudo-class-form.wrapper textarea:invalid ~ .error.message {
+        display: block; }
+      .pseudo-class-form.wrapper input:invalid ~ .success.message,
+      .pseudo-class-form.wrapper textarea:invalid ~ .success.message {
+        display: none; }
+    .pseudo-class-form.wrapper input:valid ~ .error.message,
+    .pseudo-class-form.wrapper textarea:valid ~ .error.message {
+      display: none; }
+    .pseudo-class-form.wrapper input:valid ~ .success.message,
+    .pseudo-class-form.wrapper textarea:valid ~ .success.message {
+      display: block; }
+    .pseudo-class-form.wrapper input::-webkit-input-placeholder, .pseudo-class-form.wrapper textarea::-webkit-input-placeholder {
+      color: transparent; }
+    .pseudo-class-form.wrapper input::-moz-placeholder, .pseudo-class-form.wrapper textarea::-moz-placeholder {
+      color: transparent; }
+    .pseudo-class-form.wrapper input:-ms-input-placeholder, .pseudo-class-form.wrapper textarea:-ms-input-placeholder {
+      color: transparent; }
+    .pseudo-class-form.wrapper input::-ms-input-placeholder, .pseudo-class-form.wrapper textarea::-ms-input-placeholder {
+      color: transparent; }
+    .pseudo-class-form.wrapper input::placeholder,
+    .pseudo-class-form.wrapper textarea::placeholder {
+      color: transparent; }
+    .pseudo-class-form.wrapper input:-moz-placeholder-shown ~ .error.message, .pseudo-class-form.wrapper input:-moz-placeholder-shown ~ .success.message, .pseudo-class-form.wrapper textarea:-moz-placeholder-shown ~ .error.message, .pseudo-class-form.wrapper textarea:-moz-placeholder-shown ~ .success.message {
+      display: none; }
+    .pseudo-class-form.wrapper input:-ms-input-placeholder ~ .error.message, .pseudo-class-form.wrapper input:-ms-input-placeholder ~ .success.message, .pseudo-class-form.wrapper textarea:-ms-input-placeholder ~ .error.message, .pseudo-class-form.wrapper textarea:-ms-input-placeholder ~ .success.message {
+      display: none; }
+    .pseudo-class-form.wrapper input:placeholder-shown ~ .error.message, .pseudo-class-form.wrapper input:placeholder-shown ~ .success.message,
+    .pseudo-class-form.wrapper textarea:placeholder-shown ~ .error.message,
+    .pseudo-class-form.wrapper textarea:placeholder-shown ~ .success.message {
+      display: none; }
+    .pseudo-class-form.wrapper input:not(:-moz-placeholder-shown) ~ label.name, .pseudo-class-form.wrapper textarea:not(:-moz-placeholder-shown) ~ label.name {
+      transform: translateY(0) scale(0.8); }
+    .pseudo-class-form.wrapper input:not(:-ms-input-placeholder) ~ label.name, .pseudo-class-form.wrapper textarea:not(:-ms-input-placeholder) ~ label.name {
+      transform: translateY(0) scale(0.8); }
+    .pseudo-class-form.wrapper input:not(:placeholder-shown) ~ label.name,
+    .pseudo-class-form.wrapper textarea:not(:placeholder-shown) ~ label.name {
+      -webkit-transform: translateY(0) scale(0.8);
+              transform: translateY(0) scale(0.8); }
+  .pseudo-class-form.wrapper textarea ~ label.name {
+    padding-left: 7px; }
+  .pseudo-class-form.wrapper .message {
+    padding: 0 8px 8px 8px;
+    position: absolute;
+    bottom: -36px;
+    z-index: -1;
+    font-size: 0.9rem; }
+    .pseudo-class-form.wrapper .message.error {
+      color: red; }
+    .pseudo-class-form.wrapper .message.success {
+      color: green; }
+  .pseudo-class-form.wrapper input[required] ~ label.name::after,
+  .pseudo-class-form.wrapper textarea[required] ~ label.name::after {
+    content: '※';
+    color: red; }
+  .pseudo-class-form.wrapper p.required {
+    display: block;
+    text-align: right;
+    margin-bottom: 0; }
+  .pseudo-class-form.wrapper #submit {
+    width: 120px;
+    height: 40px;
+    border: none;
+    background-color: green;
+    font-weight: bold;
+    font-size: 1rem;
+    color: #fff;
+    cursor: pointer;
+    -webkit-transition: opacity 0.2s;
+    transition: opacity 0.2s; }
+    .pseudo-class-form.wrapper #submit:disabled {
+      background-color: #999;
+      color: #ddd;
+      cursor: not-allowed; }
+    .pseudo-class-form.wrapper #submit:not(:disabled):hover {
+      opacity: 0.8; }
