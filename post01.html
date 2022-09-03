@@ -15,83 +15,27 @@
     <link rel="icon" href="images/favicon.ico" type="image/ico">
     <link rel="apple-touch-icon" href="images/apple-touch-icon-180x180.png" type="image/png" sizes="180x180">
 
-    <!-- 検索時に表示される、ウェブサイトの要約文 -->
-    <meta name="description" content="検索時に表示されるサイト紹介文(概ね80文字前後)">
-    <!-- URL正準化 -->
-    <link rel="canonical" href="https://wave-improve.netlify.app/">
-    <!-- SNS 対応 -->
-    <meta property="og:site_name"    content="WAVE"
-    <meta property="og:title"        content="WAVE">
-    <meta property="og:description"  content="WAVEの概要文">
-    <meta property="og:url"          content="https://wave-improve.netlify.app/">
-    <meta property="og:type"         content="article">
-    <meta property="og:locale"       content="ja_JP">
-    <meta property="og:fbappid"      content="*******fbappid*******">
-    <meta property="og:image"        content="https://wave-improve.netlify.app/room.webp">
-    <meta property="og:image:width"  content="1600">
-    <meta property="og:image:height" content="1066">
-    <meta property="twitter:card"    content="summary_large_image">
-
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Hachi+Maru+Pop&display=swap" rel="stylesheet">
 
     <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-
-    <!-- Magnific Popup -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.css">
-    <link rel="stylesheet" href="vendor/magnific-popup-custom.css">
-
-    <!-- slick-carousel -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css">
-    <link rel="stylesheet" href="vendor/slick-custom.css">
-
-    <!-- Vegas - Fullscreen Backgrounds and Slideshows. -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/vegas/2.5.4/vegas.min.css">
-    <link rel="stylesheet" href="vendor/vegas-custom.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
 
     <!-- Smooth Scroll -->
     <script src="https://cdn.jsdelivr.net/npm/smooth-scroll@16.1.3/dist/smooth-scroll.polyfills.min.js"></script>
-
-    <!-- PWA (Progressive Web Apps) -->
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="#fef4f4">
-    <meta name="theme-color" content="#fef4f4">
-    <meta name="apple-mobile-web-app-title" content="WAVE">
-    <link rel="manifest" href="/manifest.json">
-    <script src="app.js"></script>
 
     <!-- 自分で作ったスタイルシート -->
     <link rel="stylesheet" href="stylesheets/master.css">
   </head>
 
-
-  <!-- 表示したい内容・出し物・コンテンツを記述します -->
   <body class="post">
-
-    <!-- ハンバーガーメニュー -->
-    <div class="open-button">
-      <!-- CSS で spanタグをハンバーガーの線に変える -->
-      <span></span>
-      <span></span>
-      <span></span>
-    </div>
-
-    <!-- ヘッダー (ロゴとナビゲーションメニュー) -->
     <header class="header">
-      <!-- ロゴ -->
       <a class="logo" href="index.html">
         <img src="images/logo.webp" alt="ロゴマーク">
         <span>WAVE</span>
       </a>
-
-      <!-- ナビゲーションメニュー -->
-      <!-- fa-lgは1.33倍、la-2xは2倍の大きさ、fa-fwは横に少し間隔が空く -->
-      <!-- 2021年最新版、Font Awesome アイコンの使い方と便利な機能のまとめ -->
-      <!-- https://coliss.com/articles/build-websites/operation/work/font-awesome-guide-and-useful-tricks.html -->
       <nav class="menu">
         <ul>
           <li><a href="index.html"><i class="fa-solid fa-house fa-lg fa-fw"></i>トップ</a></li>
@@ -104,7 +48,7 @@
     <article>
       <h1>スケッチが楽しくなるノート</h1>
 
-      <time datetime="2021-07-25">
+      <time datetime="2022-07-25">
         <i class="far fa-clock fa-lg fa-fw"></i>
         七月二十五日
       </time>
@@ -198,14 +142,14 @@
       <!-- フッター ナビ -->
       <nav class="footer-nav computer only">
         <!-- ロゴ -->
-        <a href="#" class="logo">
+        <a href="index.html" class="logo">
           <img src="images/logo.webp" alt="ロゴマーク">
           <span>WAVE</span>
         </a>
 
         <!-- ナビ -->
         <ul>
-          <li><a href="#"><i class="fa-solid fa-house-chimney"></i></a></li>
+          <li><a href="index.html"><i class="fa-solid fa-house-chimney"></i></a></li>
           <li><a href="#recent">記事<br>一覧</a></li>
           <li><a href="about.html">会社<br>案内</a></li>
           <li><a href="contact.html">お問い<br>合わせ</a></li>
@@ -227,28 +171,14 @@
 
     <!-- 著作権表示 -->
       <p class="copyright">
-        Copyright &copy; 令和四年 WAVE All rights reserved.
+        Copyright © 令和四年 WAVE All rights reserved.
       </p>
     </footer>
 
-    <!-- HTML要素を操作できるように JavaScript は 一番最後に書く。 -->
-    <!-- jQuery 機能豊富なJavaScriptライブラリ。HTMLドキュメントの走査や操作、イベント処理、アニメーション、Ajaxなどを、簡単にできる。 -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <!-- Magnific Popup -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
-    <script src="vendor/magnific-popup-custom.js"></script>
-    <!-- Slick -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
-    <script src="vendor/slick-custom.js"></script>
-    <!-- Vegas -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/vegas/2.5.4/vegas.min.js"></script>
-    <script src="vendor/vegas-custom.js"></script>
+    <!-- jQuery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
     <!-- page top -->
     <script src="javascripts/page-top.js"></script>
-    <!-- glow text-->
-    <script src="vendor/glow-text.js"></script>
-    <!-- navigation -->
-    <!-- <script src="javascripts/navigation.js"></script> -->
 
     <script>
       let scroll = new SmoothScroll('a[href*="#"]', { easing: 'easeInOutQuint' });

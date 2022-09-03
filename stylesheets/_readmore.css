@@ -14,8 +14,10 @@
   height: 140px; /* グラデーションの高さ */
   cursor: pointer;
   text-align: center;
-  /* 以下グラデーションは背景を自身のサイトに合わせて設定してください */
-  background: linear-gradient(to bottom, rgba(254, 244, 244, 0) 0%, rgba(254, 244, 244, 0.95) 100%);
+  /* グラデーション背景 */
+  background: linear-gradient(to bottom,
+                              rgba(254, 244, 244, 0) 0%,
+                              rgba(254, 244, 244, 0.95) 100%);
 }
 
 .readmore-box input:checked + label {
@@ -36,7 +38,7 @@
   letter-spacing: 0.05em;
   border-radius: 20px;
 
-  /* https://coco-factory.jp/ugokuweb/wp-content/themes/ugokuweb/data/1-6/1-6.html#Flower より グラデーション ボタン */
+  /* 動くウェブデザインアイディア集より グラデーションボタン */
   border-color: transparent;
   color: var(--sakurairo);
   background: linear-gradient(270deg,#3bade3 0%, #9844b7 50%, #44ea76 100%);

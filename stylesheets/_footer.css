@@ -39,6 +39,11 @@
   font-size: clamp(18px, 4vw, 24px);
 }
 
+.footer address .tel a {
+  text-decoration: none;
+  color: var(--kurohairo);
+}
+
 .footer .copyright {
   grid-column: 1;
   grid-row: 2;
