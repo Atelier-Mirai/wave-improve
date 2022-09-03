@@ -105,7 +105,8 @@
       <h1>サイトについて</h1>
 
       <p>
-        綺麗なインテリアや可愛い文房具など、日常の中で見つけたお気に入りのものを<ruby>纏<rt>まと</rt></ruby>めているサイトです。
+        綺麗なインテリアや可愛い文房具など、日常の中で見つけたお気に入りのものを
+        <ruby>纏<rt>まと</rt></ruby>めているサイトです。
       </p>
 
       <table>
@@ -123,7 +124,14 @@
         </tr>
         <tr>
           <th>電話番号</th>
-          <td><a href="tel:052-373-4649"><ruby>052-373-4649<rt>名古屋 皆さん 宜しく</rt></ruby></a></td>
+          <td>
+            <a href="tel:052-373-4649">
+              <ruby>
+                052-373-4649
+                <rt>名古屋 皆さん 宜しく</rt>
+              </ruby>
+            </a>
+          </td>
         </tr>
         <tr>
           <th>メール<br>アドレス</th>
@@ -135,22 +143,30 @@
         </tr>
       </table>
 
-      <h2>会社案内</h2>
-      <p>地下鉄桜線桜駅1番出口より徒歩三分、交通至便の地にあります。</p>
-      <!-- iframe タグで Google Map を埋め込みます -->
-      <div class="map">
-        <div class="inner">
+      <!-- 地図の取り扱いがしやすいよう コンテナで包みます。 -->
+      <div class="map-container">
+        <div class="note">
+          <h2>会社案内</h2>
+          <p>地下鉄桜線 桜駅1番出口より徒歩三分、交通至便の地にあります。</p>
+        </div>
+
+        <div class="map">
           <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3264.098229592375!2d136.94909095223227!3d35.10425798023631!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60037b0d5843e2af%3A0x282e3c573e3f00d8!2z44Kz44Oh44OA54-I55CyIOmHjuS4puW6lw!5e0!3m2!1sja!2sjp!4v1592795030975!5m2!1sja!2sjp" style="border:0;">
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3264.098229592375!2d136.94909095223227!3d35.10425798023631!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60037b0d5843e2af%3A0x282e3c573e3f00d8!2z44Kz44Oh44OA54-I55CyIOmHjuS4puW6lw!5e0!3m2!1sja!2sjp!4v1592795030975!5m2!1sja!2sjp"
+            style="border:0;"
+            loading="lazy">
           </iframe>
         </div>
       </div>
 
-      <h2>一日社長 ノンちゃん</h2>
-      <p>「一日社長 ノンちゃん」です。のんびり<ruby>寛<rt>くつ</rt></ruby>いでいます。</p>
-      <div class="video">
-        <div class="inner">
-          <!-- 可愛い猫の動画 -->
+      <!-- YouTubeの取り扱いがしやすいよう コンテナで包みます。 -->
+      <div class="video-container">
+        <div class="note">
+          <h2>一日社長 ノンちゃん</h2>
+          <p>「一日社長 ノンちゃん」です。のんびり<ruby>寛<rt>くつ</rt></ruby>いでいます。</p>
+        </div>
+
+        <div class="video">
           <iframe
             src="https://www.youtube.com/embed/OAo1GBrdvzg?rel=0&showinfo=0"
             frameborder="0"
@@ -232,7 +248,7 @@
       </p>
 
       <!-- フッター ナビ -->
-      <nav class="footer_nav computer only">
+      <nav class="footer-nav computer only">
         <!-- ロゴ -->
         <a href="#" class="logo">
           <img src="images/logo.webp" alt="ロゴマーク">

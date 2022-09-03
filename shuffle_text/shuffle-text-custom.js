@@ -6,31 +6,26 @@ function init() {
   // ShuffleTextのインスタンス達を格納する配列
   let effectList = [];
   // shuffle クラスが付与された全ての要素を取得する。
-  // (<li class="shuffle">と書かれた要素全て)
   let elementList = document.querySelectorAll('.shuffle');
 
   // elementListの全てのメンバーに対して、繰り返し処理を行う。
   for (let i = 0; i < elementList.length; i++) {
-
-    // i番目のメンバーを取得して、elementという変数に代入。
+    // i番目のメンバーを取得して、elementという変数に代入する。
     let element = elementList[i];
-    // カスタムdata属性を付与
-    // (元の要素のHTMLは
-    // <li class="shuffle">01/01「トップページ」更新しました。</li>
-    // だったが、これを、
-    // <li class="shuffle" data-index="1">01/01「トップページ」更新しました。</li>
-    // と、data-index="1" と、カスタムdata属性を付与する。)
+    // カスタムdata属性を付与する。
+    // (元のHTMLは <li class="shuffle">01/01「トップページ」更新</li>
+    // であったが、これを
+    // <li class="shuffle" data-index="1">01/01「トップページ」更新</li>
+    // にする。つまり data-index="1" とカスタムdata属性を付与する。)
     element.dataset.index = i;
-    // ShuffleTextクラスのインスタンスを生成し、
-    // effectListに格納する。
+    // ShuffleTextクラスのインスタンスを生成しeffectListに格納する。
     effectList[i] = new ShuffleText(element);
 
     // マウスを載せたときに再生するよう、イベントリスナを指定。
     element.addEventListener('mouseenter', function () {
       // <li>要素は、次のようになっている。
-      // <li class="shuffle" data-index="1">05/04 トップページ 更新しました。</li>
-      // this.dataset.index と書くことで、
-      // data-index="1" の 1 を取得できる。
+      // <li class="shuffle" data-index="1">01/01「トップページ」更新</li>
+      // this.dataset.index と書いて、data-index="1" の 1 を取得する。
       effectList[this.dataset.index].start();
       // effectList[1].start(); と等価。
     });

@@ -2,29 +2,25 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>モーダルウィンドウ</title>
+    <title>Modaal 使用例</title>
     <meta name="viewport" content="width=device-width">
 
-    <!-- Modaal を CDN から読み込みます -->
+
+    <!-- 簡単に見栄えの良いページを作るためのスタイルシート -->
+    <link rel="stylesheet" href="https://unpkg.com/sakura.css/css/sakura.css">
+    <!-- Modaal を CDN から読み込む -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Modaal/0.4.4/css/modaal.min.css">
 
     <style>
       /* 通常時にモーダルウィンドウ内のコンテンツを表示させないために */
       .hidden { display: none !important; }
-      /* Safari で a タグをクリックした際に 輪郭線を表示させないために */
-      a { outline: 0; }
+      /* スタイルシート「sakura」が干渉するので上書き */
+      img { margin-bottom: 0; }
     </style>
   </head>
 
   <body>
-    <nav class="nav">
-      <ul>
-        <li><a href="../index.html">トップに戻る</a></li>
-      </ul>
-    </nav>
-
-    <h1>モーダルウィンドウ ライブラリ Modaal 使用例</h1>
-
+    <h1>モーダルウィンドウ ライブラリ Modaalの使用例</h1>
 
     <h2>インライン（基本）</h2>
     <p>ページ内の既存の要素（IDを使用）からコンテンツを取得し、コンテンツに読み込みます。</p>
@@ -95,6 +91,10 @@
     <h2>確認画面</h2>
     <p>ユーザーに特定のアクションの「確認」または「取消」を促すモーダルなウィンドウ。必要に応じて、コールバックイベントを含むコンテンツをプッシュすることができます。デフォルトでは、一度開くと、アクション（確認／取消など）が選択されるまで閉じることができません。</p>
     <a href="#" class="confirm">confirm</a>
+
+    <footer>
+      <a href="../index.html">戻る</a>
+    </footer>
 
     <!-- jQuery を CDN から読み込みます -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>

@@ -1,0 +1,90 @@
+.header {
+  height: 112px;
+  position: sticky;
+  z-index: 10;
+  display: grid;
+  grid-template-columns: minmax(4%, 1fr) minmax(auto, 1166px) minmax(4%, 1fr);
+}
+
+.header > * {
+  grid-column: 2;
+}
+
+.header .header-container {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  height: 100%;
+}
+
+.header .nav ul a {
+  font-size: larger;
+  color: #ffec47; /* 菜の花色 */
+}
+
+.header .nav {
+  position: fixed;
+  inset: 0 -100% 0 100%;
+  z-index: 100;
+  background: rgba(13, 13, 13, 0.85);
+  transition: transform 0.3s;
+  background: #4e483ae6;
+  background: red;
+}
+
+.header .nav {
+  position: fixed;
+  /* inset: 0; */
+  z-index: 100;
+  background: #0d0d0ddd; /* 黒羽色 */
+  transition: transform 0.3s;
+}
+
+.header .nav ul {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  gap: 40px;
+  margin-top: calc(calc(100vh - 288px) / 2);
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  color: white;
+}
+
+.open .navbtn {
+  z-index: 110;
+  color: white;
+}
+
+.open .nav {
+  transform: translate(-100%, 0);
+}
+
+.open body {
+  position: fixed;
+  overflow: hidden;
+}
+
+/* hamburgers.css のハンバーガーボタン色を上書き */
+.hamburger-inner,
+.hamburger-inner::before,
+.hamburger-inner::after {
+  width: 40px;
+  height: 4px;
+  background: #a61017; /* 京緋色 */
+}
+.hamburger.is-active .hamburger-inner,
+.hamburger.is-active .hamburger-inner::before,
+.hamburger.is-active .hamburger-inner::after {
+  width: 40px;
+  height: 4px;
+  background: #2ca9e1; /* 天色 */
+}A
+
+/* sakura.css の 干渉補正 */
+.navbtn,
+.navbtn:hover,
+.navbtn:focus:enabled {
+  background: transparent !important;
+}

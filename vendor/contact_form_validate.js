@@ -20,20 +20,10 @@ message.addEventListener("input", (event) => {
 });
 
 /*-----------------------------------------------------------------------------
-  全角英数字から半角英数字への変換
------------------------------------------------------------------------------*/
-const replaceZenkakuToHankaku = (str) => {
-  return str.replace(/[！-～]/g, (s) => {
-    return String.fromCharCode(s.charCodeAt(0) - 0xFEE0);
-  });
-}
-
-/*-----------------------------------------------------------------------------
   CSS疑似クラスを活用した、モダンでインタラクティブなフォームの作り方
   https://ics.media/entry/200413/
-
-  // MDN クライアント側のフォームデータ検証 も参考になります
-  // https://developer.mozilla.org/ja/docs/Learn/Forms/Form_validation
+  今どきの入力フォームはこう書く！inputタグの書き方まとめ
+  https://ics.media/entry/11221/
 -----------------------------------------------------------------------------*/
 // フォーム全体の妥当性を判定する為の関数の定義
 let validate = () => {
@@ -51,28 +41,31 @@ document.querySelectorAll("input, textarea").forEach((input) => {
 });
 
 /*-----------------------------------------------------------------------------
-  どの施工例を見てからの問い合わせか分かるよう、
-  参照元URLをセット
+  どの記事を見てからの問い合わせか分かるよう、参照元URLを取得する
 -----------------------------------------------------------------------------*/
 document.getElementById("referrer_url").value = document.referrer;
 
 /*-----------------------------------------------------------------------------
   フォーム送信前にタブを閉じる際に、確認アラートを表示する。
-  【JavaScript】ページ離脱時に beforeunload でアラート表示
+  Window: beforeunload イベント
+  https://developer.mozilla.org/ja/docs/Web/API/Window/beforeunload_event
+  beforeunload イベントは、ウィンドウ、文書、およびそのリソースがアンロードされる直前に発生します。文書はまだ表示されており、この時点ではイベントはキャンセル可能です。
+  このイベントによって、ウェブページがダイアログボックスを表示し、ユーザーにページを終了するかどうかの確認が求めることができます。ユーザーが確認すれば、ブラウザーは新しいページへ遷移し、そうでなければ遷移をキャンセルします。
+
+  ページ離脱時にアラート表示
   https://qiita.com/naoki_koreeda/items/bf0f512dbd91b450c671
 -----------------------------------------------------------------------------*/
-let confirmation_alert = (event) => {
-  // カスタムメッセージの設定（IE/Edgeのみ有効)
-  const confirmMessage = '入力欄を破棄し、離脱します。よろしいですか？';
-  event.returnValue = confirmMessage;
-  return confirmMessage;
+let confirmationAlert = (event) => {
+  // Cancel the event as stated by the standard.
+  event.preventDefault();
+  // Chrome requires returnValue to be set.
+  event.returnValue = '';
 };
 
-// beforeunloadイベントの登録
-// submit ボタンが押されたときには、離脱アラートを表示しない。
-window.addEventListener('beforeunload', confirmation_alert, false);
+// ページ離脱しようとした際に、アラートを表示する。
+window.addEventListener('beforeunload', confirmationAlert, false);
 
-// submit時はアラート表示させない
+// 但し、#submit が押された際には、アラートを表示させない。
 document.getElementById('submit').addEventListener('click', () => {
   window.removeEventListener('beforeunload', confirmation_alert, false);
 });

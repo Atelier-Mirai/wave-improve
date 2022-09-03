@@ -4,24 +4,19 @@
 .logo {
   display: grid;
   grid-template-columns: auto auto;
-  grid-template-rows: 79px;
+  grid-template-rows: auto;
   column-gap: 10px;
 
-  justify-self: center;
-  align-self: center;
   text-decoration: none;
 }
 
 .logo img {
   grid-column: 1;
   grid-row: 1;
-
-  width: 54px;
-  height: 54px;
-
+  width: clamp(40px, 10vw, 54px);
+  height: clamp(40px, 10vw, 54px);
   justify-self: start;
-  align-self: end;
-  padding-bottom: 12px;
+  align-self: center;
 }
 
 .logo span {
@@ -29,11 +24,10 @@
   grid-row: 1;
   justify-self: start;
   align-self: center;
-  font-weight: bold;
-  padding-bottom: 12px;
 
   /* 画面幅に応じて可変するフォントサイズ */
-  font-size: clamp(48px, 12vw, 54px);
+  font-size: clamp(40px, 10vw, 54px);
+  font-weight: bold;
 
   /* グラデーション */
   /* CSSでテキストを彩る装飾サンプル集 https://1-notes.com/css-text-design/ */
@@ -46,7 +40,7 @@
     #0068B7 0.5em 0.6em,
     #1d2088 0.7em 0.8em,
     #cfa7cd 0.8em 0.9em);
-  -webkit-background-clip: text;
+  -webkit-background-clip: text; /* for Chrome */
   background-clip: text;
   font-weight: bold;
   letter-spacing: 10px;

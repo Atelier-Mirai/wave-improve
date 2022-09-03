@@ -1,62 +1,47 @@
-/*=============================================================================
-  モバイル用メニューのためのCSS
-=============================================================================*/
-@media (max-width: 768px){
-  .header {
-    display: grid;
-    grid-template-columns: 20px 1fr 20px;
-    grid-template-rows: 30vh 70vh;
-    background: var(--sakurairo);
+/*=====================================================================
+  ヘッダーに関する装飾
+=====================================================================*/
+.header {
+  display: grid;
+  grid-template-columns: 20px 1fr 20px;
+  grid-template-rows: auto auto;
+  background: var(--sakurairo);
 
-    z-index: 2100;
-    width: 100vw;
-
-    position: fixed;
-    top: 0;
-    left: 0;
-  }
-
-  /*-----------------------------------------------------------------------------
-    ロゴ
-  -----------------------------------------------------------------------------*/
-  .header .logo {
-    grid-column: 2;
-    grid-row: 1;
-    justify-self: center;
-    align-self: center;
-  }
-
-  /*-----------------------------------------------------------------------------
-    ナビゲーションメニュー
-  -----------------------------------------------------------------------------*/
-  .header nav {
-    grid-column: 2;
-    grid-row: 2;
-    justify-self: center;
-    align-self: start;
-  }
-
-  .header nav ul {
-    display: grid;
-    grid-auto-flow: row;
-    row-gap: 100px;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-  }
-
-  .header nav ul li a {
-    text-decoration: none;
-    color: var(--kurohairo);
-    text-shadow: 5px 5px 5px gray;
-    font-size: 24px;
-    font-weight: bold;
-    /* fontawesome & iPhone 対策 */
-    display: inline-block;
-    min-width: 59px;
-  }
+  z-index: 1000;
+  width: 100vw;
 }
 
+/* ロゴ */
+.header .logo {
+  grid-column: 2;
+  grid-row: 1;
+  justify-self: center;
+  align-self: center;
+}
+
+/* ナビゲーションメニュー */
+.header nav {
+  grid-column: 2;
+  grid-row: 2;
+  justify-self: center;
+  align-self: center;
+}
+
+.header nav ul {
+  display: grid;
+  grid-auto-flow: column;
+  column-gap: 10px;
+  list-style: none;
+  padding: 0;
+}
+
+.header nav ul li a {
+  text-decoration: none;
+  color: var(--kurohairo);
+  text-shadow: 5px 5px 5px gray;
+  font-size: 13px;
+  font-weight: bold;
+}
 
 /*=============================================================================
   デスクトップ用メニューのためのCSS
@@ -64,29 +49,21 @@
 @media (min-width: 768px){
   .header {
     display: grid;
-    grid-template-columns: 0.2fr repeat(6, 1fr) 0.2fr;
-    grid-template-rows: 79px;
-
-    background: var(--sakurairo);
-    z-index: 2100;
-    width: 100vw;
+    grid-template-columns: 0.1fr repeat(2, 1fr) 0.1fr;
+    grid-template-rows: 80px;
   }
 
-  /*-----------------------------------------------------------------------------
-    ロゴ
-  -----------------------------------------------------------------------------*/
+  /* ロゴ */
   .header .logo {
-    grid-column: 2 / 4;
+    grid-column: 2;
     grid-row: 1;
     justify-self: start;
-    align-self: start;
+    align-self: center;
   }
 
-  /*-----------------------------------------------------------------------------
-    ナビゲーションメニュー
-  -----------------------------------------------------------------------------*/
+  /* ナビゲーションメニュー */
   .header nav {
-    grid-column: 5 / 8;
+    grid-column: 3;
     grid-row: 1;
     justify-self: end;
     align-self: center;
@@ -154,7 +131,7 @@
 }
 
 /* ボタン全体の形のためのCSS */
-.open-button {
+/* .open-button {
   display: none;
   position: fixed;
   top: 10px;
@@ -164,13 +141,13 @@
   cursor: pointer;
   width: 50px;
   height: 50px;
-  border-radius: 5px;
+  border-radius: 5px; */
   /* ボタンが見えるよう、モバイルメニューより前面に */
-  z-index: 2200;
-}
+  /* z-index: 2200; */
+/* } */
 
 /* 個々の線のためのCSS */
-.open-button span {
+/* .open-button span {
   display: inline-block;
   transition: all .4s;
   position: absolute;
@@ -189,10 +166,10 @@
 }
 .open-button span:nth-of-type(3) {
   top: 31px;
-}
+} */
 
 /* activeクラスを付与した後の設定 */
-.open-button.active span:nth-of-type(1) {
+/* .open-button.active span:nth-of-type(1) {
   top: 18px;
   left: 18px;
   transform: translateY(6px) rotate(-45deg);
@@ -206,7 +183,7 @@
   left: 18px;
   transform: translateY(-6px) rotate(45deg);
   width: 30%;
-}
+} */
 
 /* ボタンの出現アニメーション */
 .appearance {
