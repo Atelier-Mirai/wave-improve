@@ -13,15 +13,13 @@
 </head>
 
 <body>
-  <h1><a href="../index.html">ラーメン人気店紹介</a></h1>
-
-  <p>
-    全国各地の美味しいラーメン店を紹介します。
-  </p>
+  <h1>ラーメン人気店紹介</h1>
+  <p>全国各地の美味しいラーメン店を紹介します。</p>
 
   <hr class="divider">
 
   <section>
+    <!-- 店舗紹介 -->
     <div class="grid">
       <div class="item" data-color="shoyu" data-title="櫻幕ラーメンは 京都市東区にある 醤油ラーメンが人気のお店。280円とお財布に優しいお店である。">
         <div class="item-content">
@@ -62,7 +60,7 @@
 
   <section class="report">
     <h2>総合評価
-      <!-- 今すぐ使えるCSSレシピブックより -->
+      <!-- 今すぐ使えるCSSレシピブックより ★を付ける -->
       <div class="rating" data-rate="3.5">
         <span class="star"></span>
         <span class="star"></span>
@@ -72,11 +70,12 @@
       </div>
     </h2>
 
-    <!-- <div class="chart-container" style="position: relative; height:80vh; width:80vw"> -->
+    <!-- グラフ描画領域 -->
     <div class="chart-container">
       <canvas id="myChart"></canvas>
     </div>
 
+    <!-- 評価記事 -->
     <article class="note">
       <p>
         櫻幕ラーメンは 京都市東区にある 醤油ラーメンが人気のお店。280円とお財布に優しいお店である。
@@ -101,7 +100,9 @@
     </p>
   </footer>
 
+  <!-- jQuery -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+  <!-- Chart.js -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
   <script src="chart.js"></script>
 </body>

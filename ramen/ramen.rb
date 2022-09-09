@@ -16,7 +16,7 @@ price_list  = %w(280 380 480 580 680 780 880 980)
                   elsif price < 800
                     "良心的な価格設定が嬉しい"
                   else
-                    "高価だが行く価値がある"
+                    "高価だが価値ある逸品"
                   end
   comment = "#{name}ラーメンは #{address}にある #{shurui}ラーメンが人気のお店。#{price}円と#{phrase}。"
   idx = sprintf("%02d", index)

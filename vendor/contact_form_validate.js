@@ -3,15 +3,15 @@
 =============================================================================*/
 
 /*-----------------------------------------------------------------------------
-  文字数を数える
-  https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/String/length
+  ユーザーが何かを入力するたびに、文字数を表示する。
 -----------------------------------------------------------------------------*/
-// 文字数を返すための関数
+// 文字数を返す関数
+// https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/String/length
 let getCharacterLength = (str) => {
   return [...str].length;
 }
 
-// ユーザーが何かを入力するたびに、文字数を表示します。
+// 文字数の表示
 const message      = document.getElementById('message');
 const message_size = document.getElementById('message_size');
 message.addEventListener("input", (event) => {
@@ -20,12 +20,13 @@ message.addEventListener("input", (event) => {
 });
 
 /*-----------------------------------------------------------------------------
+  フォーム全体の妥当性を判定する
+
   CSS疑似クラスを活用した、モダンでインタラクティブなフォームの作り方
   https://ics.media/entry/200413/
   今どきの入力フォームはこう書く！inputタグの書き方まとめ
   https://ics.media/entry/11221/
 -----------------------------------------------------------------------------*/
-// フォーム全体の妥当性を判定する為の関数の定義
 let validate = () => {
   let validForm         = document.querySelector("form:valid");
   let submitButton      = document.getElementById("submit");
@@ -52,7 +53,7 @@ document.getElementById("referrer_url").value = document.referrer;
   beforeunload イベントは、ウィンドウ、文書、およびそのリソースがアンロードされる直前に発生します。文書はまだ表示されており、この時点ではイベントはキャンセル可能です。
   このイベントによって、ウェブページがダイアログボックスを表示し、ユーザーにページを終了するかどうかの確認が求めることができます。ユーザーが確認すれば、ブラウザーは新しいページへ遷移し、そうでなければ遷移をキャンセルします。
 
-  ページ離脱時にアラート表示
+  ページ離脱時にアラート表示も参考になります。
   https://qiita.com/naoki_koreeda/items/bf0f512dbd91b450c671
 -----------------------------------------------------------------------------*/
 let confirmationAlert = (event) => {
@@ -67,5 +68,5 @@ window.addEventListener('beforeunload', confirmationAlert, false);
 
 // 但し、#submit が押された際には、アラートを表示させない。
 document.getElementById('submit').addEventListener('click', () => {
-  window.removeEventListener('beforeunload', confirmation_alert, false);
+  window.removeEventListener('beforeunload', confirmationAlert, false);
 });

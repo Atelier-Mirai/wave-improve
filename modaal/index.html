@@ -37,34 +37,28 @@
     </div>
 
     <h2>画像(一枚)</h2>
-    <p>1枚の画像を開きます。開いた画像の下にラベルを表示したり、data-modaal-desc="My Image Description "を使ってアクセス可能なラベルを表示することもできます。</p>
-    <a href="images/sea01.jpg" class="image" data-modaal-desc="空飛ぶ鷗">
-      <img src="images/sea01_s.jpg" alt="空飛ぶ鷗">
+    <p>一枚の画像を開きます。開いた画像の下にラベルを表示したり、data-modaal-desc="My Image Description "を使ってアクセス可能なラベルを表示することもできます。</p>
+    <a href="images/sea01.webp" class="image" data-modaal-desc="空飛ぶ鷗">
+      <img src="images/sea01_s.webp" alt="空飛ぶ鷗">
     </a>
 
     <h2>画像ギャラリー(複数枚)</h2>
     <p>data-group="group-name "属性でリンクされた一連の画像を開きます。group-nameは、あなたのギャラリーグループの識別子に置き換えてください。</p>
-    <div style="display: grid; grid-auto-flow: column">
-      <a href="images/sea01.jpg" data-group="gallery" class="gallery" data-modaal-desc="空飛ぶ鷗">
-        <img src="images/sea01_s.jpg" alt="空飛ぶ鷗">
+    <div>
+      <a href="images/sea01.webp" class="gallery" data-group="sea" data-modaal-desc="空飛ぶ鷗">
+        <img src="images/sea01_s.webp" alt="空飛ぶ鷗">
       </a>
-      <a href="images/sea02.jpg" data-group="gallery" class="gallery" data-modaal-desc="砂浜に打ち寄せる波">
-        <img src="images/sea02_s.jpg" alt="砂浜に打ち寄せる波">
+      <a href="images/sea02.webp" class="gallery" data-group="sea" data-modaal-desc="打ち寄せる波">
+        <img src="images/sea02_s.webp" alt="打ち寄せる波">
       </a>
-      <a href="images/sea03.jpg" data-group="gallery" class="gallery" data-modaal-desc="透明な南の海">
-        <img src="images/sea03_s.jpg" alt="透明な南の海">
+      <a href="images/sea03.webp" class="gallery" data-group="sea" data-modaal-desc="透明な南の海">
+        <img src="images/sea03_s.webp" alt="透明な南の海">
       </a>
-      <a href="images/sea04.jpg" data-group="gallery" class="gallery" data-modaal-desc="夜明け前">
-        <img src="images/sea04_s.jpg" alt="夜明け前">
+      <a href="images/sea04.webp" class="gallery" data-group="sea" data-modaal-desc="夜明け前">
+        <img src="images/sea04_s.webp" alt="夜明け前">
       </a>
-      <a href="images/sea05.jpg" data-group="gallery" class="gallery" data-modaal-desc="断崖にて">
-        <img src="images/sea05_s.jpg" alt="断崖にて">
-      </a>
-      <a href="images/sea06.jpg" data-group="gallery" class="gallery" data-modaal-desc="眼下を望む">
-        <img src="images/sea06_s.jpg" alt="眼下を望む">
-      </a>
-      <a href="images/sea07.jpg" data-group="gallery" class="gallery" data-modaal-desc="幾星霜に耐えた老松">
-        <img src="images/sea07_s.jpg" alt="幾星霜に耐えた老松">
+      <a href="images/sea05.webp" class="gallery" data-group="sea" data-modaal-desc="断崖にて">
+        <img src="images/sea05_s.webp" alt="断崖にて">
       </a>
     </div>
 
@@ -72,25 +66,29 @@
     <h3>YouTube</h3>
     <p>リンクのhref属性で指定された埋め込み動画をiframeに読み込みます。現在テストされているフォーマットは、YoutubeとVimeoです。その他、iframeでの埋め込みに対応しているものも動作するはずです。</p>
     <p>Modaalのビデオタイプは、VimeoとYoutubeの両方で徹底的にテストされています。最良の結果を得るためには、URLフォーマットが以下のようになっていることを確認してください。私たちはこのURLをiframeに移植し、そこから各サービスプロバイダーが必要な再生をすべてコントロールします。</p>
-    <br>
     <p>https://www.youtube.com/embed/cBJyo0tgLnw、最後のIDはあなたのユニークなビデオIDです。これは、youtubeの動画で「共有」を選択し、「埋め込み」をクリックすると表示されます。提示されたコンテンツの中にこのURLがあります。</p>
     <a href="https://www.youtube.com/embed/cBJyo0tgLnw" class="youtube">
-      <img src="images/youtube.jpg" alt="YouTube" width="136">
+      <img src="images/youtube.webp" alt="YouTube" width="128">
     </a>
 
     <h3>Vimeo</h3>
     <p>https://player.vimeo.com/video/109626219、最後のIDはお客様固有のビデオIDです。これは、vimeoの動画で「共有」を選択し（一般的に右側に表示されます）、「埋め込み」内のコンテンツを選択することで確認できます。埋め込みコードの一番最初にあるsrc=""の中に必要なURLがあります。</p>
     <a href="https://player.vimeo.com/video/109626219" class="vimeo">
-      <img src="images/vimeo.jpg" alt="Vimeo" width="136">
+      <img src="images/vimeo.webp" alt="Vimeo" width="128">
     </a>
 
-    <h2>iframeで、他のウェブサイトの内容を開く</h2>
+    <h2>iframeで 他のウェブサイトの内容を開く</h2>
     <p>リンクのhref属性で定義されたURLを、iframeに読み込みます。このためには、モーダルの幅と高さも設定する必要があります。</p>
     <a href="http://humaan.com" class="iframe">iframe</a>
 
     <h2>確認画面</h2>
     <p>ユーザーに特定のアクションの「確認」または「取消」を促すモーダルなウィンドウ。必要に応じて、コールバックイベントを含むコンテンツをプッシュすることができます。デフォルトでは、一度開くと、アクション（確認／取消など）が選択されるまで閉じることができません。</p>
     <a href="#" class="confirm">confirm</a>
+
+    <style>
+      /* sakura.css の干渉補正 */
+      .modaal-confirm-btn.modaal-cancel { color: #555; }
+    </style>
 
     <footer>
       <a href="../index.html">戻る</a>

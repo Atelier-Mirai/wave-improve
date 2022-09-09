@@ -52,6 +52,9 @@ form input, form textarea {
   background: rgba(255, 255, 255, 0.5);
 }
 
+form .message.error { color: red; }
+form .message.success { color: green; }
+
 form input:invalid,
 form textarea:invalid {
   box-shadow: none;
@@ -75,26 +78,6 @@ form textarea:valid~.error.message {
 form input:valid~.success.message,
 form textarea:valid~.success.message {
   display: block;
-}
-
-form input::-webkit-input-placeholder,
-form textarea::-webkit-input-placeholder {
-  color: transparent;
-}
-
-form input::-moz-placeholder,
-form textarea::-moz-placeholder {
-  color: transparent;
-}
-
-form input:-ms-input-placeholder,
-form textarea:-ms-input-placeholder {
-  color: transparent;
-}
-
-form input::-ms-input-placeholder,
-form textarea::-ms-input-placeholder {
-  color: transparent;
 }
 
 form input::placeholder,
@@ -124,14 +107,6 @@ form .message {
   bottom: -36px;
   z-index: -1;
   font-size: 0.9rem;
-}
-
-form .message.error {
-  color: red;
-}
-
-form .message.success {
-  color: green;
 }
 
 form input[required]~label.name::after,
@@ -172,5 +147,5 @@ form #submit:not(:disabled):hover {
 
 form #message_size {
   font-size: 12px;
-  transform: translateY(110px)
+  transform: translateY(140px)
 }

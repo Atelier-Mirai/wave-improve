@@ -13,7 +13,7 @@
 
   /* 美しいグラデーションをCSSで実装 */
   /* https://www.webcreatorbox.com/tech/css-gradient */
-  background: linear-gradient(45deg, #2ca9e128, #ffec4760) fixed, url('../images/sea02.jpg') 75% 75%;
+  background: linear-gradient(45deg, #2ca9e128, #ffec4760) fixed, url('../images/sea02.webp') 75% 75%;
   background-size: cover;
   width: 100vw;
 }
@@ -114,26 +114,30 @@
   }
 
   .footer .footer-nav ul li {
-    background-color: var(--kurohairo);
-    border-radius: 0%;
     display: grid;
-    align-items: center;
-    justify-content: center;
-    width: 64px;
-    height: 64px;
+    grid-template-columns: 64px;
+    grid-template-rows: 64px;
+
+    background-color: var(--kurohairo);
+
     transform: rotate(45deg);
-    overflow: hidden;
   }
+
+  .footer .footer-nav ul li a {
+    justify-self: center;
+    align-self: center;
+
+    text-decoration: none;
+    font-size: 14px;
+    color: var(--sakurairo);
+    text-align: center;
+
+    transform: rotate(-45deg);
+  }
+
 
   .footer .footer-nav ul li:hover {
     background: var(--botaniro);
   }
 
-  .footer .footer-nav ul li a {
-    transform: rotate(-45deg);
-    text-decoration: none;
-    font-size: 14px;
-    color: var(--sakurairo);
-    text-align: center;
-  }
 }
