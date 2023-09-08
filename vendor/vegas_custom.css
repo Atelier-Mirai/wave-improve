@@ -1,0 +1,40 @@
+/*=============================================================================
+  スライダーを全画面で表示する
+=============================================================================*/
+
+#vegas-slider {
+  /* スライダー全体の縦幅を全画面にする */
+  width: 100vw;
+  height: 100vh;
+
+  & h1 {
+    position: absolute;
+    z-index: 2;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    /* レスポンシブ 文字サイズ */
+    /* 幅480px: 24px, 幅768px: 48px */
+    font-size: clamp(24px, calc(1.5rem + ((1vw - 4.8px) * 8.3333)), 48px);
+
+    letter-spacing: 0.2em;
+    text-transform: uppercase;  /* (小文字でも)大文字に変換する */
+    color: white;
+    width: 80%;
+  }
+
+  & a {
+    grid-column: 2 / 4;
+    position: absolute;
+    z-index: 2;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+
+    letter-spacing: 0.1em;
+    text-transform: uppercase;  /* (小文字でも)大文字に変換する */
+    color: white;
+  }
+}

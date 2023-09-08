@@ -8,6 +8,7 @@ section {
   gap: 20px;
   margin-bottom: 200px;
 }
+
 h1, p { grid-column: 1 / -1; }
 
 div { background: #c0f4c7; height: 200px;

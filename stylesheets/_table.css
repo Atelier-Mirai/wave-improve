@@ -4,31 +4,31 @@
 =============================================================================*/
 table {
   border-collapse: collapse;
-}
 
-th,
-td {
-  border: solid 1px lightgray;
-  padding: 10px;
-}
+  & th,
+  & td {
+    border: solid 1px lightgray;
+    padding: 10px;
 
-td a {
-  text-decoration: none;
-  color: inherit;
-}
+    & a {
+      text-decoration: none;
+      color: inherit;
 
-td a:hover {
-  text-decoration: underline;
-}
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
 
-th {
-  width: 5em;
-  text-align: left; /* 左揃え */
-  text-align-last: justify; /* 均等割付 (Safari以外) */
-}
+  & th {
+    width: 6em;
+    text-align: center;       /* 中央揃え */
+    text-align-last: justify; /* 均等割付 (Safari以外有効) */
+  }
 
-/*  奇数行と偶数行とで、それぞれで色を変える */
-tr:nth-child(odd)  th { background: #a1dfbc; color: black; }
-tr:nth-child(even) th { background: #00ba13; color: white; }
-tr:nth-child(odd)  td { background: #bfcdf5; color: black; }
-tr:nth-child(even) td { background: #4470ec; color: white; }
+  /*  奇数行と偶数行とで、それぞれで色を変える */
+  & tr:nth-child(odd)  th { background: #a1dfbc; color: black; }
+  & tr:nth-child(even) th { background: #00ba13; color: white; }
+  & tr:nth-child(odd)  td { background: #bfcdf5; color: black; }
+  & tr:nth-child(even) td { background: #4470ec; color: white; }
+}

@@ -15,13 +15,18 @@
     <link href="https://fonts.googleapis.com/css2?family=Hachi+Maru+Pop&display=swap" rel="stylesheet">
 
     <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.4.2/css/all.css">
 
-    <!-- contact form  validate -->
+    <!-- contact form validate -->
     <link rel="stylesheet" href="vendor/contact_form_validate.css">
 
     <!-- 自分で作ったスタイルシート -->
     <link rel="stylesheet" href="stylesheets/master.css">
+
+    <!-- page top -->
+    <script src="javascripts/page_top.js" defer></script>
+    <!-- contact form  validate -->
+    <script src="vendor/contact_form_validate.js" defer></script>
   </head>
 
   <body class="post">
@@ -39,57 +44,59 @@
       </nav>
     </header>
 
-    <article>
-      <h1>お問い合わせ</h1>
-
-      <p>
-        ご意見、ご感想などがございましたら、以下の欄にご記入の上、送信してください。
-        記事に関するご質問などもお気軽にお寄せください。
-      </p>
-
-      <form action="./success.html" method="post" name="contact" netlify-honeypot="bot-field" data-netlify="true">
-        <input type="hidden" name="form-name" value="contact">
-        <label class="hidden" for="subject">件名</label>
-        <input type="hidden" id="subject" name="subject" value="Webサイトから「お問い合わせ」がありました。">
-        <label class="hidden" for="referrer_url">お問い合わせ前に見ていたURL</label>
-        <input  type="hidden" id="referrer_url" name="referrer_url"value="">
-        <script>
-          document.getElementById("referrer_url").value = document.referrer;
-        </script>
-
-        <p class="hidden">
-          <label>Don’t fill this out if you're human:
-            <input name="bot-field">
-          </label>
-        </p>
+    <main class="main">
+      <article>
+        <h1>お問い合わせ</h1>
 
         <p>
-          <textarea autocapitalize="none" autocorrect="off" id="message" name="message" placeholder="とっても為になりました。ありがとうございます。" required="required"></textarea>
-          <label class="name" for="message">お問い合わせ内容</label>
-          <span id="message_size"></span>
+          ご意見、ご感想などがございましたら、以下の欄にご記入の上、送信してください。
+          記事に関するご質問などもお気軽にお寄せください。
         </p>
 
-        <p>
-          <input type="text" autocomplete="name" class="input" id="name" name="name" placeholder="山田 太郎" required="required">
-          <label class="name" for="name">お名前</label>
-        </p>
+        <form action="./success.html" method="post" name="contact" netlify-honeypot="bot-field" data-netlify="true">
+          <input type="hidden" name="form-name" value="contact">
+          <label class="hidden" for="subject">件名</label>
+          <input type="hidden" id="subject" name="subject" value="Webサイトから「お問い合わせ」がありました。">
+          <label class="hidden" for="referrer_url">お問い合わせ前に見ていたURL</label>
+          <input  type="hidden" id="referrer_url" name="referrer_url"value="">
+          <script>
+            document.getElementById("referrer_url").value = document.referrer;
+          </script>
 
-        <p>
-          <input type="email" autocomplete="email" class="input" id="email" name="email" placeholder="taro@example.com" required="required">
-          <label class="name" for="email">メールアドレス</label>
-          <span class="error message">taro@example.comのような形式で入力してください。</span>
-        </p>
+          <p class="hidden">
+            <label>Don’t fill this out if you're human:
+              <input name="bot-field">
+            </label>
+          </p>
 
-        <p>
-          <input type="tel" autocomplete="tel" class="input" id="tel" maxlength="11" minlength="7" name="tel" pattern="^(\d|-|\(|\))*$" placeholder="0523734649">
-          <label class="name" for="tel">電話番号</label>
-          <span class="success message">OKです！</span>
-          <span class="error message">09012345678、052-373-4649、0120(000)999のような形式で入力してください。</span>
-        </p>
+          <p>
+            <textarea autocapitalize="none" autocorrect="off" id="message" name="message" placeholder="とっても為になりました。ありがとうございます。" required="required"></textarea>
+            <label class="name" for="message">お問い合わせ内容</label>
+            <span id="message_size"></span>
+          </p>
 
-        <input type="submit" id="submit" name="" value="送信">
-      </form>
-    </article>
+          <p>
+            <input type="text" autocomplete="name" class="input" id="name" name="name" placeholder="山田 太郎" required="required">
+            <label class="name" for="name">お名前</label>
+          </p>
+
+          <p>
+            <input type="email" autocomplete="email" class="input" id="email" name="email" placeholder="taro@example.com" required="required">
+            <label class="name" for="email">メールアドレス</label>
+            <span class="error message">taro@example.comのような形式で入力してください。</span>
+          </p>
+
+          <p>
+            <input type="tel" autocomplete="tel" class="input" id="tel" maxlength="11" minlength="7" name="tel" pattern="^(\d|-|\(|\))*$" placeholder="0523734649">
+            <label class="name" for="tel">電話番号</label>
+            <span class="success message">OKです！</span>
+            <span class="error message">09012345678、052-373-4649、0120(000)999のような形式で入力してください。</span>
+          </p>
+
+          <input type="submit" id="submit" name="" value="送信">
+        </form>
+      </article>
+    </main>
 
     <div class="submenu">
       <aside class="profile">
@@ -152,7 +159,7 @@
     <!-- フッター -->
     <footer class="footer">
       <!-- ページの先頭にスムーズスクロール -->
-      <p id="page-top">
+      <p id="page_top">
         <!-- 金色のボタン -->
         <a href="#" class="gold button">
           <span>
@@ -194,15 +201,8 @@
 
     <!-- 著作権表示 -->
       <p class="copyright">
-        Copyright © 令和四年 WAVE All rights reserved.
+        Copyright © 令和五年 WAVE All rights reserved.
       </p>
     </footer>
-
-    <!-- jQuery -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
-    <!-- page top -->
-    <script src="javascripts/page-top.js"></script>
-    <!-- contact form  validate -->
-    <script src="vendor/contact_form_validate.js"></script>
   </body>
 </html>

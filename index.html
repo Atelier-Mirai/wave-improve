@@ -17,20 +17,6 @@
 
     <!-- 検索時に表示される、ウェブサイトの要約文 -->
     <meta name="description" content="検索時に表示されるサイト紹介文(概ね80文字前後)">
-    <!-- URL正準化 -->
-    <link rel="canonical" href="https://wave-improve.netlify.app/">
-    <!-- SNS 対応 -->
-    <meta property="og:site_name"    content="WAVE"
-    <meta property="og:title"        content="WAVE">
-    <meta property="og:description"  content="WAVEの概要文">
-    <meta property="og:url"          content="https://wave-improve.netlify.app/">
-    <meta property="og:type"         content="website">
-    <meta property="og:locale"       content="ja_JP">
-    <meta property="og:fbappid"      content="*******fbappid*******">
-    <meta property="og:image"        content="https://wave-improve.netlify.app/room.webp">
-    <meta property="og:image:width"  content="1600">
-    <meta property="og:image:height" content="1066">
-    <meta property="twitter:card"    content="summary_large_image">
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -38,34 +24,38 @@
     <link href="https://fonts.googleapis.com/css2?family=Hachi+Maru+Pop&display=swap" rel="stylesheet">
 
     <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.4.2/css/all.css">
 
-    <!-- Magnific Popup -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.css">
-    <link rel="stylesheet" href="vendor/magnific-popup-custom.css">
+    <!--  jQuery: JavaScriptライブラリ。HTMLドキュメントの走査や操作、イベント処理、アニメーション、Ajaxなどを行える。 -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" defer></script>
+
+    <!-- GLightbox -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/glightbox/3.2.0/css/glightbox.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/glightbox/3.2.0/js/glightbox.min.js" defer></script>
+    <script src="glightbox/glightbox_custom.js" defer></script>
 
     <!-- slick-carousel -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css">
-    <link rel="stylesheet" href="vendor/slick-custom.css">
+    <link rel="stylesheet" href="vendor/slick_custom.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js" defer></script>
+    <script src="vendor/slick_custom.js" defer></script>
 
     <!-- Vegas - Fullscreen Backgrounds and Slideshows. -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/vegas/2.5.4/vegas.min.css">
-    <link rel="stylesheet" href="vendor/vegas-custom.css">
-
-    <!-- Smooth Scroll -->
-    <script src="https://cdn.jsdelivr.net/npm/smooth-scroll@16.1.3/dist/smooth-scroll.polyfills.min.js"></script>
-
-    <!-- PWA (Progressive Web Apps) -->
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="#fef4f4">
-    <meta name="theme-color" content="#fef4f4">
-    <meta name="apple-mobile-web-app-title" content="WAVE">
-    <link rel="manifest" href="/manifest.json">
-    <script src="app.js"></script>
+    <link rel="stylesheet" href="vendor/vegas_custom.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vegas/2.5.4/vegas.min.js" defer></script>
+    <script src="vendor/vegas_custom.js" defer></script>
 
     <!-- 自分で作ったスタイルシート -->
     <link rel="stylesheet" href="stylesheets/master.css">
+
+    <!-- page top -->
+    <script src="javascripts/page_top.js" defer></script>
+    <!-- glow text-->
+    <script src="vendor/glow_text.js" defer></script>
+    <!-- navigation -->
+    <script src="javascripts/navigation.js" defer></script>
   </head>
 
   <!-- 表示したい内容・出し物・コンテンツを記述します -->
@@ -125,7 +115,7 @@
 
     <!-- 記事一覧 -->
     <section class="recent" id="recent">
-      <h2>最新記事</h2>
+      <h2 class="title">最新記事</h2>
 
       <article>
         <a href="post01.html">
@@ -192,9 +182,9 @@
 
       <!-- モーダルウィンドウの例 -->
       <article>
-        <a href="modaal/index.html">
+        <a href="glightbox/index.html">
           <figure>
-            <img src="images/modaal.webp" alt="">
+            <img src="images/glightbox.webp" alt="">
           </figure>
           <h3>モーダルウィンドウ</h3>
         </a>
@@ -204,7 +194,7 @@
       <article>
         <a href="shuffle_text/index.html">
           <figure>
-            <img src="images/shuffle-text.webp" alt="">
+            <img src="images/shuffle_text.webp" alt="">
           </figure>
           <h3>シャッフルテキスト</h3>
         </a>
@@ -252,7 +242,7 @@
 
       <!-- 画像の並び替え -->
       <article>
-        <a href="ramen/muuri.html">
+        <a href="muuri/index.html">
           <figure>
             <img src="images/muuri.webp" alt="">
           </figure>
@@ -262,7 +252,7 @@
 
       <!-- レーダーチャート -->
       <article>
-        <a href="ramen/chart.html">
+        <a href="chart/index.html">
           <figure>
             <img src="images/chart.webp" alt="">
           </figure>
@@ -273,39 +263,37 @@
 
     <!-- 写真ポップアップ -->
     <section class="zoo">
-      <h2>動物園の思い出</h2>
+      <h2 class="title">動物園の思い出</h2>
       <p>動物園に行ってきました。いろいろな動物に会えました。</p>
-      <div>
-        <a href="images/tora.webp" title="大きな虎です">
-          <img src="images/tora_s.webp">
-        </a>
-        <a href="images/tsuru.webp" title="鶴です">
-          <img src="images/tsuru_s.webp">
-        </a>
-        <a href="images/zou.webp" title="象さん 象さん お鼻が長いのね">
-          <img src="images/zou_s.webp">
-        </a>
-        <a href="images/saru.webp" title="お猿さんです">
-          <img src="images/saru_s.webp">
-        </a>
-        <a href="images/hakucho.webp" title="白鳥の湖">
-          <img src="images/hakucho_s.webp">
-        </a>
-        <a href="images/araiguma.webp" title="洗熊です">
-          <img src="images/araiguma_s.webp">
-        </a>
-        <a href="images/kuma.webp" title="熊さんです">
-          <img src="images/kuma_s.webp">
-        </a>
-      </div>
+      <a href="images/tora.webp" class="glightbox" title="大きな虎です">
+        <img src="images/tora_s.webp">
+      </a>
+      <a href="images/tsuru.webp" class="glightbox" title="鶴です">
+        <img src="images/tsuru_s.webp">
+      </a>
+      <a href="images/zou.webp" class="glightbox" title="象さん 象さん お鼻が長いのね">
+        <img src="images/zou_s.webp">
+      </a>
+      <a href="images/saru.webp" class="glightbox" title="お猿さんです">
+        <img src="images/saru_s.webp">
+      </a>
+      <a href="images/hakucho.webp" class="glightbox" title="白鳥の湖">
+        <img src="images/hakucho_s.webp">
+      </a>
+      <a href="images/araiguma.webp" class="glightbox" title="洗熊です">
+        <img src="images/araiguma_s.webp">
+      </a>
+      <a href="images/kuma.webp" class="glightbox" title="熊さんです">
+        <img src="images/kuma_s.webp">
+      </a>
     </section>
 
     <!-- 写真のスライドショー -->
     <!-- Grid Of Sliders https://codepen.io/jackharner/pen/gyyeEd -->
     <section class="sea">
+      <h2 class="title">海の思い出</h2>
+      <p>海に行ってきました。波の音はとっても心落ち着きます。</p>
       <div class="slider-wrapper">
-        <h2>海の思い出</h2>
-        <p>海に行ってきました。波の音はとっても心落ち着きます。</p>
         <div class="slider">
           <div class="card">
             <img src="images/sea01.webp" alt="">
@@ -342,7 +330,7 @@
     <!-- フッター -->
     <footer class="footer">
       <!-- ページの先頭にスムーズスクロール -->
-      <p id="page-top">
+      <p id="page_top">
         <!-- 金色のボタン -->
         <a href="#" class="gold button">
           <span>
@@ -384,31 +372,8 @@
 
     <!-- 著作権表示 -->
       <p class="copyright">
-        Copyright © 令和四年 WAVE All rights reserved.
+        Copyright © 令和五年 WAVE All rights reserved.
       </p>
     </footer>
-
-    <!-- HTML要素を操作できるように JavaScript は 一番最後に書く。 -->
-    <!--  機能豊富なJavaScriptライブラリ。HTMLドキュメントの走査や操作、イベント処理、アニメーション、Ajaxなどを、簡単にできる。 -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
-    <!-- Magnific Popup -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
-    <script src="vendor/magnific-popup-custom.js"></script>
-    <!-- Slick -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
-    <script src="vendor/slick-custom.js"></script>
-    <!-- Vegas -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/vegas/2.5.4/vegas.min.js"></script>
-    <script src="vendor/vegas-custom.js"></script>
-    <!-- page top -->
-    <script src="javascripts/page-top.js"></script>
-    <!-- glow text-->
-    <script src="vendor/glow-text.js"></script>
-    <!-- navigation -->
-    <script src="javascripts/navigation.js"></script>
-
-    <script>
-      let scroll = new SmoothScroll('a[href*="#"]', { easing: 'easeInOutQuint' });
-    </script>
   </body>
 </html>

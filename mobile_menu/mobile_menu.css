@@ -1,57 +1,78 @@
+/*=====================================================================
+  ハンバーガーメニュー
+=====================================================================*/
+
 /* ヘッダー */
 .header {
   display: grid;
   grid-template-columns: 1fr 70px;
   grid-template-rows: 100px;
+
+  & .nav {
+    position: fixed;
+    inset: 0 -100% 0 100%;
+
+    /* 画面右外に移動 */
+    transition: transform 0.3s;
+    background: #0d0d0ddd;      /* 黒羽色 */
+
+    display: grid;
+    align-items: center;
+
+    & ul {
+      list-style: none;
+      padding: 0;
+      display: grid;
+      gap: 40px;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+
+      & a {
+        font-size: larger;
+        color: #ffec47;         /* 菜の花色 */
+      }
+    }
+  }
 }
 
 /* ナビゲーションメニュー */
-.header .nav {
-  position: fixed;
-  inset: 0 -100% 0 100%;  /* 画面右外に移動 */
-  transition: transform 0.3s;
-  background: #0d0d0ddd;  /* 黒羽色 */
-
-  display: grid;
-  align-items: center;
-}
-
-.header .nav ul {
-  list-style: none;
-  padding: 0;
-
-  display: grid;
-  gap: 40px;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
-
-.header .nav ul a {
-  font-size: larger;
-  color: #ffec47; /* 菜の花色 */
-}
-
 /* メニュー開放時 */
-.open .navbtn { z-index: 100; }
-.open .nav { transform: translate(-100%, 0); }
+.open {
+  & .navbtn {
+    z-index: 100;
+  }
+
+  & .nav {
+    transform: translate(-100%, 0);
+  }
+}
 
 /* hamburgers.css のハンバーガーボタン色を上書き */
-.hamburger-inner,
-.hamburger-inner::before,
-.hamburger-inner::after {
-  background: #a61017; /* 京緋色 */
+.hamburger-inner {
+  background: #a61017;          /* 京緋色 */
+
+  &::before,
+  &::after {
+    background: #a61017;        /* 京緋色 */
+  }
 }
 
-.hamburger.is-active .hamburger-inner,
-.hamburger.is-active .hamburger-inner::before,
-.hamburger.is-active .hamburger-inner::after {
-  background: #2ca9e1; /* 天色 */
+.hamburger.is-active .hamburger-inner {
+  background: #2ca9e1;          /* 天色 */
+
+  &::before,
+  &::after {
+    background: #2ca9e1;        /* 天色 */
+  }
 }
 
 /* sakura.css の 干渉補正 */
-.navbtn,
-.navbtn:hover,
-.navbtn:focus:enabled {
+.navbtn {
   background: transparent !important;
+
+  &:hover,
+  &:focus:enabled {
+    background: transparent !important;
+  }
 }

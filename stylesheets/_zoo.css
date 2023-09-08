@@ -1,0 +1,17 @@
+.zoo {
+  grid-row: zoo;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px 10px;
+
+  @media (width >= 768px) {
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: auto auto;
+    column-gap: 20px;
+  }
+
+  & h2,
+  & p {
+    grid-column: 1 / -1;
+  }
+}

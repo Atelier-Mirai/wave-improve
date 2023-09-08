@@ -1,7 +1,7 @@
-/*-------------------------------------------------------------
+/*=====================================================================
   色の指定  CSSカスタムプロパティを定義
-  color: var(--kyohiiro); などのように用いることができる
---------------------------------------------------------------*/
+  color: var(--kyohiiro); などのように用いる
+=====================================================================*/
 :root {
   --kyohiiro:          #ff251e; /* 京緋色(きょうひいろ) */
   --shinonomeiro:      #f19072; /* 東雲色(しののめいろ) */
@@ -15,108 +15,32 @@
   --momijiiro:         #a61017; /* 紅葉色(もみじいろ) */
   --nibiiro:           #9ea1a3; /* 鈍色(にびいろ) */
   --kurohairo:         #0d0d0d; /* 黒羽色(くろはいろ) */
-
   --harukazeiro:       transparent; /* 春風色(はるかぜいろ) */
 }
 
-.kyohiiro {
-  color: #ff251e !important; }
-
-.bg-kyohiiro {
-  background: #ff251e !important; }
-
-.shinonomeiro {
-  color: #f19072 !important; }
-
-.bg-shinonomeiro {
-  background: #f19072 !important; }
-
-.nanowanairo {
-  color: #ffec47 !important; }
-
-.bg-nanowanairo {
-  background: #ffec47 !important; }
-
-.sanaeiro {
-  color: #67a70c !important; }
-
-.bg-sanaeiro {
-  background: #67a70c !important; }
-
-.amairo {
-  color: #2ca9e1 !important; }
-
-.bg-amairo {
-  background: #2ca9e1 !important; }
-
-.utsushiiro {
-  color: #3d6eda !important; }
-
-.bg-utsushiiro {
-  background: #3d6eda !important; }
-
-.botaniro {
-  color: #e7609e !important; }
-
-.bg-botaniro {
-  background: #e7609e !important; }
-
-.ayameiro {
-  color: #674196 !important; }
-
-.bg-ayameiro {
-  background: #674196 !important; }
-
-.otomeiro {
-  color: #f3cccc !important; }
-
-.bg-otomeiro {
-  background: #f3cccc !important; }
-
-.momijiiro {
-  color: #a61017 !important; }
-
-.bg-momijiiro {
-  background: #a61017 !important; }
-
-.nibiiro {
-  color: #9ea1a3 !important; }
-
-.bg-nibiiro {
-  background: #9ea1a3 !important; }
-
-.kurohairo {
-  color: #0d0d0d !important; }
-
-.bg-kurohairo {
-  background: #0d0d0d !important; }
-
-.sakurairo {
-  color: #fef4f4 !important; }
-
-.bg-sakurairo {
-  background: #fef4f4 !important; }
-
-.shirayuriiro {
-  color: #def3de !important; }
-
-.bg-shirayuriiro {
-  background: #def3de !important; }
-
-.shiroiro {
-  color: #ede9d8 !important; }
-
-.bg-shiroiro {
-  background: #ede9d8 !important; }
-
-.shiraumeiro {
-  color: #efe0e8 !important; }
-
-.bg-shiraumeiro {
-  background: #efe0e8 !important; }
-
-.harukazeiro {
-  color: transparent !important; }
-
-.bg-harukazeiro {
-  background: transparent !important; }
+.kyohiiro        { color:      var(--kyohiiro) !important; }
+.bg-kyohiiro     { background: var(--kyohiiro) !important; }
+.shinonomeiro    { color:      var(--shinonomeiro) !important; }
+.bg-shinonomeiro { background: var(--shinonomeiro) !important; }
+.nanowanairo     { color:      var(--nanohanairo) !important; }
+.bg-nanowanairo  { background: var(--nanohanairo) !important; }
+.sanaeiro        { color:      var(--sanaeiro) !important; }
+.bg-sanaeiro     { background: var(--sanaeiro) !important; }
+.amairo          { color:      var(--amairo) !important; }
+.bg-amairo       { background: var(--amairo) !important; }
+.utsushiiro      { color:      var(--utsushiiro) !important; }
+.bg-utsushiiro   { background: var(--utsushiiro) !important; }
+.botaniro        { color:      var(--botaniro) !important; }
+.bg-botaniro     { background: var(--botaniro) !important; }
+.ayameiro        { color:      var(--ayameiro) !important; }
+.bg-ayameiro     { background: var(--ayameiro) !important; }
+.sakurairo       { color:      var(--sakurairo) !important; }
+.bg-sakurairo    { background: var(--sakurairo) !important; }
+.momijiiro       { color:      var(--momijiiro) !important; }
+.bg-momijiiro    { background: var(--momijiiro) !important; }
+.nibiiro         { color:      var(--nibiiro) !important; }
+.bg-nibiiro      { background: var(--nibiiro) !important; }
+.kurohairo       { color:      var(--kurohairo) !important; }
+.bg-kurohairo    { background: var(--kurohairo) !important; }
+.harukazeiro     { color:      transparent !important; }
+.bg-harukazeiro  { background: transparent !important; }

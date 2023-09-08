@@ -1,18 +1,27 @@
-/* 150px以上のスクロールで activeクラスを付与 電話をかける を表示させる
----------------------------------------------------------------------*/
-let fixed_footer = () => {
-  const $fixed_footer = $('#fixed_footer');
-  const trigger_position = 150;
-  let   current_position = $(this).scrollTop();
+/*=====================================================================
+  固定フッター
 
-  if (current_position > trigger_position) {
-    $fixed_footer.addClass('active');
+  200px以上のスクロールで activeクラスを付与
+  「電話をかける」を表示させる
+=====================================================================*/
+
+// 発動要件となるスクロール量
+const TRIGGER_POSITION = 200
+
+const fixedFooter = () => {
+  // scroll という変数に、ウィンドウのスクロール量を取得して、代入する。
+  let scroll = document.querySelector("html").scrollTop
+  // 固定フッターを取得
+  let footer = document.getElementById("fixed_footer")
+
+  // もしスクロール量が200px以上ならば
+  if (scroll > TRIGGER_POSITION) {
+    footer.classList.add("active")
   } else {
-    $fixed_footer.removeClass('active');
+    footer.classList.remove("active")
   }
 }
 
-/* 画面スクロールやページ読み込みの際に fixed_footer 関数を呼ぶ
----------------------------------------------------------------------*/
-$(window).scroll(() => { fixed_footer(); });
-$(window).on("load", () => { fixed_footer(); });
+// 画面スクロールやページ読み込みの際に fixedFooter 関数を呼ぶ
+document.addEventListener("scroll", (event) => { fixedFooter() })
+window.addEventListener("load", (event) => { fixedFooter() })

@@ -1,54 +1,48 @@
 /*=============================================================================
   記事一覧
-  モバイル版・デスクトップ版 共通の設定
 =============================================================================*/
+
 .recent {
   grid-row: recent;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 20px 10px;
-}
 
-.recent a {
-  color: var(--kurohairo);
-  text-decoration: none;
-}
-
-.recent a:hover {
-  text-decoration: underline;
-}
-
-.recent h3 {
-  font-size: 14px;
-}
-
-.recent h2 {
-  grid-column: 1 / -1;
-  font-size: 24px;
-  font-weight: normal;
-  text-align: center;
-  color: var(--kurohairo);
-}
-
-/* 疑似要素を使った装飾
------------------------------------------------------------------------------*/
-.recent h3::before {
-  content: "▼";
-  color: var(--nanohanairo);
-}
-
-.recent h3::after {
-  content: "▲";
-  color: var(--utsushiiro);
-}
-
-/*=============================================================================
-  デスクトップ版の設定
-=============================================================================*/
-@media (min-width: 768px) {
-  .recent {
+  @media (width >= 768px) {
     grid-template-columns: repeat(5, 1fr);
     grid-template-rows: auto auto;
     column-gap: 20px;
+  }
+
+  & a {
+    color: var(--kurohairo);
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  & h2 {
+    grid-column: 1 / -1;
+    font-size: 24px;
+    font-weight: normal;
+    text-align: center;
+    color: var(--kurohairo);
+  }
+
+  & h3 {
+    font-size: 14px;
+
+    /* 疑似要素を使った装飾 */
+    &::before {
+      content: "▼";
+      color: var(--nanohanairo);
+    }
+
+    &::after {
+      content: "▲";
+      color: var(--utsushiiro);
+    }
   }
 }

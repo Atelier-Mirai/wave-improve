@@ -1,35 +1,34 @@
-/* スクロールを促す
------------------------------------------------------------------------------*/
+/*=====================================================================
+  スクロールを促す為のアニメーション
+=====================================================================*/
+
 .scroll.down {
+  /* 表示位置 */
   grid-row: vegas;
   justify-self: center;
   align-self: end;
   padding-bottom: 60px;
-}
-
-/* 表示位置 */
-.scroll.down {
   position: relative;
-}
 
-/* Scrollという文字表示の設定 */
-.scroll.down span {
-  color: var(--sakurairo);
-  font-size: 1rem;
-  letter-spacing: 0.05em;
-}
+  /* Scrollという文字表示の設定 */
+  & span {
+    color: var(--sakurairo);
+    font-size: 1rem;
+    letter-spacing: 0.05em;
+  }
 
-/* 線の表示 */
-.scroll.down::after {
-  content: "";
-  position: absolute;
-  top: 220px;
-  left: 35px;
-  width: 2px;
-  height: 30px;
-  background: var(--sakurairo);
-  animation: pathmove 1.4s ease-in-out infinite;
-  opacity: 0;
+  /* 線の表示 */
+  &::after {
+    content: "";
+    position: absolute;
+    top: 220px;
+    left: 35px;
+    width: 2px;
+    height: 30px;
+    background: var(--sakurairo);
+    animation: pathmove 1.4s ease-in-out infinite;
+    opacity: 0;
+  }
 }
 
 /* 高さ・位置・透過度が変化して、線が上から下に動く */

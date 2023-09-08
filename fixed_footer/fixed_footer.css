@@ -1,3 +1,14 @@
+/*=====================================================================
+  固定フッター
+=====================================================================*/
+
+/* スムーズスクロール */
+html {
+  scroll-behavior: smooth;  /* ゆっくり遷移する */
+  scroll-padding-top: 20px; /* 上に20px余白を設けて停止する */
+}
+
+/* 固定フッター */
 #fixed_footer {
   position: fixed;
   width: 100%;
@@ -6,80 +17,83 @@
   transition-duration: 0.3s;
   transition-timing-function: ease;
   transition-delay: 0.3s;
-}
+  bottom: -95px;  /* 最初は電話をかけるを下に隠しておく */
 
-/* 最初は電話をかけるを下に隠しておく */
-#fixed_footer { bottom: -95px; }
-/* 電話をかけるが上に現れる */
-#fixed_footer.active { bottom: 0; }
+  &.active {
+    bottom: 0; /* 電話をかけるが上に現れる */
 
-#fixed_footer.active span {
-  display: inline-block;  margin: 6px 0; }
+    span {
+      display: inline-block;
+      margin: 6px 0;
+    }
+  }
 
-/* CSS Grid で ボタン項目を並べる */
-#fixed_footer nav ul {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-auto-flow: column;
+  & nav {
+    & ul {
+      /* CSS Grid で ボタン項目を並べる */
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-auto-flow: column;
+      overflow: hidden;
+      margin: 0 -1px;
+      padding: 0;
+      list-style: none;
 
-  overflow: hidden;
-  margin: 0 -1px;
-  padding: 0;
-  list-style: none;
-}
+      & li a {
+        vertical-align: middle;
+        text-align: center;
+        text-decoration: none;
+        display: block;
+        background: #0d0d0d;            /* 黒羽色 */
+        padding-top: 12px;
+        color: #fef4f4;                 /* 桜色 */
+        font-size: 11px;
+        height: 60px;
+        border-left: 1px solid #fef4f4; /* 桜色 */
+        position: relative;
 
-#fixed_footer nav ul li a {
-  vertical-align: middle;
-  text-align: center;
-  text-decoration: none;
-  display: block;
-  background: #0d0d0d;
-  padding-top: 12px;
-  color: #fef4f4;
-  font-size: 11px;
-  height: 60px;
-  border-left: 1px solid #fef4f4;
-  position: relative;
-}
+        span {
+          display: inline-block;
+          margin: 12px 0;
+        }
 
-#fixed_footer nav ul li a span {
-  display: inline-block;
-  margin: 12px 0;
-}
+        &::after {
+          content: "";
+          display: block;
+          border: 15px solid transparent;
+          border-left-color: #ffec47;   /* 菜の花色 */
+          border-top-color: #ffec47;
+          width: 0;
+          height: 0;
+          position: absolute;
+          left: 0;
+          top: 0;
+        }
+      }
+    }
 
-#fixed_footer nav ul li a::after {
-  content: "";
-  display: block;
-  border: 15px solid transparent;
-  border-left-color: #ffec47;
-  border-top-color: #ffec47;
-  width: 0;
-  height: 0;
-  position: absolute;
-  left: 0;
-  top: 0;
-}
+    .telephone {
+      background: #0d0d0d;
+      text-align: center;
+      border-top: 1px solid #fef4f4;    /* 桜色 */
 
-#fixed_footer nav .telephone {
-  background: #0d0d0d;
-  text-align: center;
-  border-top: 1px solid #fef4f4;
-}
+      & a {
+        color: #fef4f4;                 /* 桜色 */
+        text-decoration: none;
+        width: 100%;
+        display: inline-block;
+        padding: 10px;
 
-#fixed_footer nav .telephone a {
-  color: #fef4f4;
-  text-decoration: none;
-  width: 100%;
-  display: inline-block;
-  padding: 10px;
-}
-
-#fixed_footer nav .telephone a small {
-  display: block;
-  font-size: 9px;
+        & small {
+          display: block;
+          font-size: 9px;
+        }
+      }
+    }
+  }
 }
 
 /* sakura.css による干渉を補正 */
 #fixed_footer { width: 100%; left: 0; }
-li {  margin-bottom: 0; }
-a:hover { border: none; }
+li            { margin-bottom: 0; }
+a:hover       { border: none; }
