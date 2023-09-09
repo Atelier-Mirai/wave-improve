@@ -12,10 +12,10 @@
     margin: 0;
     border-bottom: 1px solid var(--nibiiro);
 
-    li {
+    & li {
       background: white;
 
-      a {
+      & a {
         display: block;
         margin-bottom: -2px;
         padding: 10px 20px;

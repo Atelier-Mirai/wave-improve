@@ -4,9 +4,11 @@
 
 /* リンク無効化
 -----------------------------------------------------------------------------*/
-.link.disable { pointer-events: none;
+.link.disable {
+  pointer-events: none;
 
-  &:hover {   pointer-events: none;
+  &:hover {
+    pointer-events: none;
   }
 }
 
