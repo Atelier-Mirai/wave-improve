@@ -49,7 +49,7 @@
 .rainbow.button {
   /* 背景色を桜色のグラデーションにする */
   /* https://coolors.co/gradient-maker/ */
-  background: radial-gradient(circle, #fafafa 0%, #f7cbea 100%);
+  background: radial-gradient(circle, #fef4f4 0%, #f7cbea 100%);
 
   /* ボタンに枠線をつける */
   border: 4px solid #e60012;

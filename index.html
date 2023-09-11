@@ -26,13 +26,22 @@
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.4.2/css/all.css">
 
-    <!--  jQuery: JavaScriptライブラリ。HTMLドキュメントの走査や操作、イベント処理、アニメーション、Ajaxなどを行える。 -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" defer></script>
+    <!-- PWA (Progressive Web Apps) -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="#fef4f4">
+    <meta name="theme-color" content="#fef4f4">
+    <meta name="apple-mobile-web-app-title" content="WAVE">
+    <link rel="manifest" href="/manifest.json">
+    <script src="app.js" defer></script>
 
     <!-- GLightbox -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/glightbox/3.2.0/css/glightbox.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/glightbox/3.2.0/js/glightbox.min.js" defer></script>
     <script src="glightbox/glightbox_custom.js" defer></script>
+
+    <!--  jQuery: JavaScriptライブラリ。HTMLドキュメントの走査や操作、イベント処理、アニメーション、Ajaxなどを行える。 -->
+    <!-- slick と Vegas の為に使用 -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" defer></script>
 
     <!-- slick-carousel -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
