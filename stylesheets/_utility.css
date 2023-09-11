@@ -5,6 +5,7 @@
 /* リンク無効化
 -----------------------------------------------------------------------------*/
 .link.disable {
+  display: inline-block; /* safari hack */
   pointer-events: none;
 
   &:hover {
