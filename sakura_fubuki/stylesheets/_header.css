@@ -1,20 +1,32 @@
 /*=====================================================================
-  ヘッダー
-  モバイル版・デスクトップ版 共通の配置・装飾指定
+  ヘッダー に関する 配置や装飾等の指定
 =====================================================================*/
+
 /* header 要素に対する指定を行う */
 header  {
-  grid-row: header;     /* catch 行の下に配置します */
+  grid-row: header;     /* header 行の下に配置します */
   justify-self: center; /* 水平方向に中央揃えします */
   align-self: center;   /* 垂直方向に中央揃えします */
 
-  /* 画面幅に応じて可変するフォントサイズ */
-  font-size: clamp(48px, 12vw, 54px);
+  /* 画面の横幅が768px以上の時の追加指定 */
+  @media (width >= 768px) {
+    /* 水平方向に始まりから(左寄せで)配置します */
+    justify-self: start;
+  }
+
+  background-color: var(--utsushiiro); /* 背景色は移色 */
+  color: var(--sakurairo);  /* 文字の色は桜色 */
+  font-size: 48px;          /* 文字の大きさの指定 */
+  font-weight: bold;        /* 文字の太さを、太字にします */
+  letter-spacing: 10px;     /* 少し広めに文字の間隔を空けます */
 
   /* 文字の色を虹色にします */
-  /* CSSでテキストを彩る装飾サンプル集  */
+  /* 参考: CSSでテキストを彩る装飾サンプル集  */
   /* https://1-notes.com/css-text-design/ */
+
+  /* 文字色を透明にします */
   color: transparent;
+  /* 反復線形グラデーションによる背景画像を生成します */
   background: repeating-linear-gradient(45deg,
     #e60012 0.1em 0.2em,
     #f39800 0.2em 0.3em,
@@ -23,24 +35,13 @@ header  {
     #0068B7 0.5em 0.6em,
     #1d2088 0.7em 0.8em,
     #cfa7cd 0.8em 0.9em);
+  /* 背景を前景のテキストの中に (切り取って) 表示します */
   -webkit-background-clip: text;
   background-clip: text;
 
-  font-weight: bold;    /* 文字の太さを、太字にします */
-  letter-spacing: 10px; /* 少し広めに文字の間隔を空けます */
-}
-
-/* header 要素内の a 要素に対する指定を行う */
-header a {
-  color: inherit;        /* 文字の色は、h1 の色を継承します */
-  text-decoration: none; /* 文字の装飾はなし(下線を付けない) */
-}
-
-/*=====================================================================
-  デスクトップ版の配置・装飾指定
-=====================================================================*/
-@media (width >= 768px) {
-  header {
-    justify-self: start; /* 水平方向に始まりから(左寄せで)配置します */
+  /* header 要素内の a 要素に対する指定を行う */
+  & a {
+    color: inherit;        /* 文字の色は、h1 の色を継承します */
+    text-decoration: none; /* 文字の装飾はなし(下線を付けない) */
   }
 }

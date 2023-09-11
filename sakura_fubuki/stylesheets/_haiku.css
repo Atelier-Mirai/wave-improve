@@ -1,48 +1,69 @@
 /*=====================================================================
-  俳句の紹介
-  モバイル版・デスクトップ版 共通の配置・装飾指定
+  俳句の紹介に関する 配置や装飾等の指定
 =====================================================================*/
-/* section 要素に対する指定を行う */
-section {
-  grid-row: haiku;  /* haiku 行の下に配置します */
-  display: grid;    /* grid 枠線 を使って配置するモードにします */
+
+/* haikuクラスに対する指定 */
+.haiku {
+  grid-row: haiku;                /* haiku 行の下に配置します */
+  display: grid;                  /* 枠線(grid)を使い 配置できるようにします */
   grid-template-columns: 1fr 1fr; /* 二列、創ります */
-  gap: 20px 10px;                 /* 行間を20px 列間を10px 取ります */
-}
+  row-gap: 20px;                  /* 行間を20px 列間を10px 取ります */
+  column-gap: 10px;
 
-/* section 要素内の a 要素に対する指定を行う */
-section a {
-  color: var(--kurohairo); /* 文字の色は黒羽色にします */
-  text-decoration: none;   /* 文字の装飾はなし(下線を付けない) */
-}
-
-/* section 要素内の a要素にマウスを重ねたときの指定を行う */
-section a:hover {
-  /* 文字の装飾として、下線を付けます */
-  text-decoration: underline;
-}
-
-/* section 要素内の h2 要素に対する指定を行う */
-section h2 {
-  grid-column: 1 / -1;     /* (見出しなので)二列ぶち抜きで配置します */
-  font-size: 24px;         /* 文字の大きさを指定します */
-  font-weight: normal;     /* 文字の太さは、普通にします */
-  text-align: center;      /* 文字揃えは中央にします */
-  color: var(--kurohairo); /* 文字の色は黒羽色にします */
-}
-
-section h3 {
-  font-size: 18px;         /* 文字の大きさを指定します */
-}
-
-/*=====================================================================
-  デスクトップ版の配置・装飾指定
-=====================================================================*/
-@media (width >= 768px) {
-  section {
-    /* 3列 x 2行 で配置するようにします */
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: auto auto;
-    column-gap: 20px; /* 列間を20pxにします */
+  /* 画面の横幅が768px以上の時の追加指定 */
+  @media (width >= 768px) {
+    /* 3列 で配置するようにします */
+    grid-template-columns: 1fr 1fr 1fr;
   }
+
+  /* haikuクラス内のh3要素(俳句)に対する指定 */
+  & h3 {
+    font-size: 17px;         /* 文字の大きさを指定します */
+  }
+
+  /* haikuクラス内のp要素(俳人名)に対する指定 */
+  & p {
+    text-align: right;       /* 文字を右揃えにします */
+  }
+
+  /* haiku クラス内の a 要素に対する指定 */
+  & a {
+    color: var(--kurohairo); /* 文字の色は黒羽色にします */
+    text-decoration: none;   /* 文字の装飾はなし(下線を付けない) */
+  }
+
+  /* haiku クラス内の a要素にマウスを重ねたときの指定 */
+  & a:hover {
+    /* 文字の装飾として、下線を付けます */
+    text-decoration: underline;
+  }
+
+  /* haiku クラス内の h2要素(見出し)に対する指定 */
+  & h2 {
+    grid-column: 1 / -1;     /* (見出しなので)二列ぶち抜きで配置します */
+    font-size: 24px;         /* 文字の大きさを指定します */
+    font-weight: normal;     /* 文字の太さは普通にします */
+    text-align: center;      /* 文字揃えは中央にします */
+    color: var(--kurohairo); /* 文字の色は黒羽色にします */
+
+    /* 見出しの上下に金色の線を引くための装飾いろいろ */
+    /* 参考: https://jajaaan.co.jp/css/css-headline/ */
+    position: relative;
+    padding: 1.25rem 2rem;
+    margin: 1rem 0 1rem;
+    &::before,
+    &::after {
+      position: absolute;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      content: "";
+      background: linear-gradient(135deg,
+                                  #704308 0%,
+                                  #ffce08 40%,
+                                  #e1ce08 60%,
+                                  #704308 100%);
+    }
+    &::before { top: 0; }
+    &::after  { bottom: 0; }
 }

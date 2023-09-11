@@ -5,7 +5,6 @@
 /* リンク無効化
 -----------------------------------------------------------------------------*/
 .link.disable {
-  display: inline-block;
   pointer-events: none;
 
   &:hover {
