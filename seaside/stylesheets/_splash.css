@@ -1,0 +1,102 @@
+/*---------------------------------------------------------------------
+  ローディング（スプラッシュ）用スタイルシート
+---------------------------------------------------------------------*/
+
+/* 背景画面設定 */
+#splash {
+  /* fixedで全面に固定 */
+  position: fixed;
+  width:  100%;
+  height: 100%;
+  z-index: 999;
+  background: var(--kurohairo);
+  text-align: center;
+  color: var(--sakurairo);
+
+  /* ロゴ画像を中央に配置 */
+  #splash_logo {
+    position: absolute;
+    top:  50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    & svg {
+      width: 300px;
+    }
+  }
+
+  /* 手書き風にするCSS */
+  /* 参考: 【初心者向け】Vivus.jsを使ったSVGアニメーションの作り方 */
+  /* https://tagnote.net/js-parts/vivus-js/ */
+  #mask .st0 {
+    fill: none;
+    stroke: var(--sakurairo);
+    stroke-width: 90;
+
+    /* 線の太さを指定する */
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-miterlimit: 10;
+    stroke-dasharray: 1500;   /*  線の間隔を指定する  */
+    stroke-dashoffset: 1500;  /*  線の位置を指定する  */
+  }
+}
+
+/* 円形表示アニメーション */
+#splash_circle {
+  display: none;
+  position: fixed;
+  transform: scale(100);
+  background: var(--nibiiro);
+
+  /* 伸びる背景色の設定 */
+  z-index: 999;
+
+  /* 丸のスタートの形状 */
+  top:  calc(50% - 1rem);  /* 50%から円の半径1remを引いた値 */
+  left: calc(50% - 1rem);
+  width:  2rem;
+  height: 2rem;
+}
+
+body.appear #splash_circle {
+  display: block;
+  border-radius: 50%;
+  animation-name: splash_circle_animation;
+  animation-duration: 1.5s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes splash_circle_animation {
+  /* 丸のスタート位置と形状 */
+  0% {
+    transform: scale(40);
+  }
+  /* 丸の終了位置と形状 */
+  100% {
+    transform: scale(0);
+    display: none;       /* 終了時は消える */
+  }
+}
+
+/* 画面遷移の後現れるコンテンツ設定 */
+#container {
+  opacity: 1;  /* はじめは透過0に */
+}
+
+/* bodyにappearクラスがついたら出現 */
+body.appear #container {
+  /* animation-name: appear_animation;
+  animation-duration: 1s;
+  animation-delay: 0.8s;
+  animation-fill-mode: forwards;
+  opacity: 0; */
+}
+
+@keyframes appear_animation {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}

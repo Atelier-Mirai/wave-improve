@@ -1,0 +1,18 @@
+/*---------------------------------------------------------------------
+  フェイドアウトの為のアニメーション
+---------------------------------------------------------------------*/
+.fadeout {
+  animation-name: fadeout_animation;
+  animation-duration: 1.5s;
+  animation-fill-mode: forwards;
+  display: none;  /* アニメーション終了後は非表示に */
+}
+
+@keyframes fadeout_animation {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}

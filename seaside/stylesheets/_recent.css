@@ -1,0 +1,27 @@
+/*=====================================================================
+  最新記事
+=====================================================================*/
+.recent {
+  width: max(80%, 700px);
+  /* max-width: max(80%, 1750px); */
+  margin: 0 auto;
+
+  background: #ffec4780;
+
+  & h2 {
+    /* 書体の大きさを可変にする */
+    /* https://chrisburnell.com/clamp-calculator/ */
+    font-size: clamp(1.5rem, 0.069rem + 6.107vw, 3rem);
+  }
+
+  /* 時計アイコン */
+  .fa-clock {
+    color: var(--amairo);
+  }
+
+  & p {
+    line-height: 2;
+    font-size: clamp(1rem, 0.881rem + 0.509vw, 1.125rem);
+  }
+
+}

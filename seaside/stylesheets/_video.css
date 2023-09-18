@@ -1,0 +1,31 @@
+/*---------------------------------------------------------------------
+  背景動画の為に
+---------------------------------------------------------------------*/
+
+#video_area {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 120px;
+
+  /* 動画 */
+  #video {
+    grid-column: 1;
+    grid-row: 1 / span 2;
+    min-width:  100vw;
+    min-height: 100vh;
+    object-fit: cover;
+  }
+
+  /*  PV タイトル  */
+  .pv_title {
+    grid-column: 1;
+    grid-row: 2;
+    align-self: end;
+    color: var(--shinonomeiro);
+    text-transform: uppercase;
+    font-weight: normal;
+    font-size: 120px;
+    line-height: 1;
+    white-space: nowrap;
+  }
+}

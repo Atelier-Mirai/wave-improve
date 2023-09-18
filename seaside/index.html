@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Seaside(海辺)</title>
+    <meta name="viewport" content="width=device-width">
+
+		<!-- Google Fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Rammetto+One&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+		<!-- acab/reset.css -->
+		<link rel="stylesheet" href="https://unpkg.com/@acab/reset.css">
+
+    <!--自作のCSS-->
+    <link rel="stylesheet" href="stylesheets/style.css">
+
+    <!-- vivus JavaScript library to make drawing animation on SVG -->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/vivus/0.4.6/vivus.min.js" defer></script>
+    <script src="javascripts/vivus-custom.js" defer></script>
+
+		<!--自作のJavaScript-->
+		<script src="javascripts/script.js" defer></script>
+  </head>
+
+  <body>
+    <!-- splash時に出現する橙色のロゴ文字 -->
+    <div id="splash">
+      <div id="splash_logo">
+        <svg id="mask" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="739" height="258.9" viewBox="0 0 739 258.9" style="enable-background:new 0 0 739 258.9;" xml:space="preserve">
+          <image xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="images/logo_orange.svg" width="739" height="258.9" mask="url(#clipmask)"></image>
+          <mask id="clipmask" maskUnits="objectBoundingBox">
+            <path class="st0" d="M124.9,73.4c0,0,57.3-46.5,22.9-66.6c-35.2-20.7-87,8.9-90.1,55.4c-3.1,46.6,48.4,84.2,34.7,130.7 s-59.6,47.3-79.7,39.8c-20.1-7.4-14.9-75.1,5.8-79.5l147.1,10.8c0,0,39.2-11.3,38.4-31.1c-0.8-19.8-4.4-35.8-13-35.7 c-25.3,0.3-45.7,63.3-51.4,95.7c-6,34.8,3,35.9,22.5,29c19.5-6.9,102.7-186.4,133.4-79.5c-20-19.8-51.6-34.7-59.9-0.3 c-8.3,34.4-33.7,68.2-6,68s87-105.9,85.5-98C299.1,153.4,265.3,228,298,221.9c32.7-6.1,74.4-118.2,74.4-118.2
+		c4.2,56.7,21.2,122.4,0,133.3c-21.2,10.9-51.2,37.6-47.6,9.6c3.6-27.9,126.1-113.8,131.5-118.6c-16.2,48.5-21.8,70.8-0.3,64.9 s46.7-83.1,69.7-71.6c22.9,11.5,27.1,16.3,27.1,16.3s-70.8,32-62.3,72.6s143.6-109.4,151.2-147c7.6-37.7,17.8-50.1-10.8-50.1 c-34.5,0-107.4,268.4-65.2,224c41.9-44.1,140.1-100.1,141.2-124.8c1.1-24.7-11.1-15-25.2-8.5c-14.1,6.5-48.7,31.3-42.3,62.8
+		s2.8,66.1,26,55.4s73.6-79.8,73.6-79.8"/>
+            <line class="st0" x1="490.5" y1="50.6" x2="459.9" y2="103.6"/>
+          </mask>
+        </svg>
+      </div>
+    </div>
+
+    <!-- splash時に出現する円形の背景 -->
+    <div id="splash_circle"></div>
+
+    <header class="header">
+      <h1 class="logo above">
+        <a href="#">
+          <img src="images/logo_white.svg" alt="Seaside logo">
+        </a>
+      </h1>
+
+      <!-- ハンバーガーメニュー -->
+      <div class="hamburger above">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+
+      <nav class="nav">
+        <ul class="menu">
+          <li class="active above">
+            <a href="#">Home</a>
+          </li>
+          <li class="above">
+            <a href="#">Profile</a>
+          </li>
+          <li class="above">
+            <a href="#">Sounds</a>
+          </li>
+          <li class="above">
+            <a href="#">Contact</a>
+          </li>
+        </ul>
+      </nav>
+
+      <div class="scaling_disk"></div>
+    </header>
+
+    <div id="video_area" class="hero">
+      <video id="video" poster="images/seaside.webp" playsinline muted autoplay loop>
+        <source src="videos/seaside.webm" type="video/webm">
+        <source src="videos/seaside.mp4" type="video/mp4">
+      </video>
+      <p class="pv_title below">Seaside</p>
+        <!-- <span class="below">Seasidea</span> -->
+      <!-- </p> -->
+    </div>
+
+    <main class="scroll_snap">
+      <!-- 記事一覧 -->
+      <section class="recent">
+        <article>
+          <h2>美味しいオムレツのレシピ</h2>
+
+          <time datetime="2023-07-25">
+            <i class="fa-regular fa-clock fa-lg fa-fw"></i>
+            七月二十五日
+          </time>
+
+          <figure class="sepia rotate-3 frame">
+            <img src="images/recipe.webp"
+                 alt="スケッチを書き込んだノート">
+          </figure>
+
+          <p>
+            海辺を歩いていると、幼い頃に食べた思い出の味を思い出します。とてもとても美味しかったオムレツです。
+          </p>
+          <p>
+             とっても大好きで毎日のように作ってもらっていました。黄色い玉子に赤いケチャップをかけて、お<ruby>匙<rt>さじ</rt></ruby>で<ruby>掬<rt>すく</tr></ruby>って頂きます。
+          </p>
+          <p>
+             卵一つで簡単に作れるほっぺたが落ちそうなくらいのご馳走です。ぜひ作って見てください。
+          </p>
+        </article>
+      </section>
+
+      <section class="literature">
+        <h2>文學紹介</h2>
+        <p class="lead text">
+          文學堂では古今の様々な作家による名作を紹介しています。
+        </p>
+        <article id="pora-no">
+          <h3>ポラーノの広場 宮沢賢治</h3>
+          <p>
+            そのころわたくしは、モリーオ市の博物局に勤めて居りました。
+          </p>
+          <p>
+            十八等官でしたから役所のなかでも、ずうっと下の方でしたし俸給もほんのわずかでしたが、受持ちが標本の採集や整理で生れ付き好きなことでしたから、わたくしは毎日ずいぶん愉快にはたらきました。殊にそのころ、モリーオ市では競馬場を植物園に拵え直すというので、その景色のいいまわりにアカシヤを植え込んだ広い地面が、切符売場や信号所の建物のついたまま、わたくしどもの役所の方へまわって来たものですから、わたくしはすぐ宿直という名前で月賦で買った小さな蓄音器と二十枚ばかりのレコードをもって、その番小屋にひとり住むことになりました。わたくしはそこの馬を置く場所に板で小さなしきいをつけて一疋の山羊を飼いました。毎朝その乳をしぼってつめたいパンをひたしてたべ、それから黒い革のかばんへすこしの書類や雑誌を入れ、靴もきれいにみがき、並木のポプラの影法師を大股にわたって市の役所へ出て行くのでした。
+          </p>
+          <p>
+            あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら、うつくしい森で飾られたモリーオ市、郊外のぎらぎらひかる草の波。
+          </p>
+          <p>
+            またそのなかでいっしょになったたくさんのひとたち、ファゼーロとロザーロ、羊飼のミーロや、顔の赤いこどもたち、地主のテーモ、山猫博士のボーガント・デストゥパーゴなど、いまこの暗い巨きな石の建物のなかで考えていると、みんなむかし風のなつかしい青い幻燈のように思われます。では、わたくしはいつかの小さなみだしをつけながら、しずかにあの年のイーハトーヴォの五月から十月までを書きつけましょう。
+          </p>
+        </article>
+      </section>
+
+      <section class="contact">
+        <!-- 投稿記事 -->
+        <article>
+          <h1>お問い合わせ</h1>
+          <p>
+            ご意見・ご感想など、以下の欄にご記入の上、送信してください。
+            記事に関するご質問などもお気軽にお寄せください。
+          </p>
+
+          <!-- お問い合わせフォーム -->
+          <!-- 各種属性の意味は次の通り -->
+          <!--  name="contact"    サーバ処理時に、contact という名前のフォームとして扱う
+                action="/success" 送信ボタンを押すと、success.html を表示する
+                method="POST"     form送信の際の約束事として、こう記述する
+                netlify-honeypot="bot-field"   ボット対策(プログラムによる自動投稿対策)
+                data-netlify-recaptcha="true"  車の絵を選べなどの「キャプチャ」機能を用いる
+                data-netlify="true">           Netlify でフォーム処理を行う -->
+          <form
+            name="contact"
+            action="/success"
+            method="POST"
+            netlify-honeypot="bot-field"
+            data-netlify-recaptcha="true"
+            data-netlify="true">
+
+            <!-- Netlify honeypot -->
+            <!-- hidden(隠し)クラスにしているので、人の目からはこの入力枠は見えない。
+                 それでも入力枠に文字入力されているならば、ボット（コンピュータプログラム）
+                 による投稿なので、Netlify により、スパム(迷惑)として扱われる -->
+            <p class="hidden">
+              <label>Don’t fill this out if you're human:
+                <input name="bot-field">
+              </label>
+            </p>
+
+            <!-- メール通知用の隠し枠 -->
+            <!-- Netlifyから送られるメールの「件名」と
+                「問い合わせ前に見ていたURL」を指定している -->
+            <input type="hidden" id="subject" name="subject" data-remove-prefix="true" value="Webサイトから「お問い合わせ」がありました。">
+            <label class="hidden" for="subject">件名</label>
+            <input id="referrer_url" name="referrer_url" type="hidden">
+            <label class="hidden" for="referrer_url">お問い合わせ前に見ていたURL</label>
+            <script>document.getElementById("referrer_url").value = document.referrer</script>
+
+            <p>
+              <!-- 長文用の文字入力枠 -->
+              <!-- 各種属性の意味は次の通り -->
+              <!-- autocapitalize="none" 自動的に先頭文字を大文字にしない
+                    autocorrect="off"    自動的に綴校正(スペルチェック)を行わない
+                    id="message"         id属性をmesseageにする。
+                                         labelのfor属性に for="message" と書き、
+                                         入力枠とラベルの対応関係を明確にする
+                    name="message"       サーバ側で、message という名前の入力枠として扱う
+                    placeholder="とっても為になりました。ありがとうございます。" 入力例 required="required"  required属性。送信ボタンを押すには入力必須 -->
+
+              <textarea
+                autocapitalize="none"
+                autocorrect="off"
+                id="message"
+                name="message"
+                placeholder="とっても為になりました。ありがとうございます。" required="required"></textarea>
+              <label for="message">お問い合わせ内容</label>
+            </p>
+
+            <p>
+              <!-- 文字入力枠 -->
+              <!-- 各種属性の意味は次の通り -->
+              <!-- type="text" 文字入力用の枠 通常のキーボードが表示される
+                   autocomplete="name" iPhone の連絡先から自分の名前が自動入力できる -->
+              <input
+                type="text"
+                autocomplete="name"
+                id="name"
+                name="name"
+                placeholder="山田 太郎"
+                required="required">
+              <label for="name">お名前</label>
+            </p>
+
+            <p>
+              <!-- 文字入力枠 -->
+              <!-- 各種属性の意味は次の通り -->
+              <!-- type="email" メール入力用の枠 メール用のキーボードが表示される
+                   autocomplete="email" iPhone で自分のメールアドレスが自動入力できる -->
+              <input
+                type="email"
+                autocomplete="email"
+                id="email"
+                name="email"
+                placeholder="taro@example.com"
+                required="required">
+              <label for="email">メールアドレス</label>
+            </p>
+
+            <p>
+              <!-- 文字入力枠 -->
+              <!-- 各種属性の意味は次の通り -->
+              <!-- type="tel" 電話入力用の枠 電話用のキーボードが表示される
+                   autocomplete="tel" iPhone で自分の電話番号が自動入力できる
+                   maxlength="13" 最大13桁
+                   minlength="7"  最小 7桁
+                   pattern="^(\d|-|\(|\))*$" 「正規表現」数字か - か () が入力可 -->
+              <input
+                type="tel"
+                autocomplete="tel"
+                id="tel"
+                maxlength="13"
+                minlength="7"
+                name="tel"
+                pattern="^(\d|-|\(|\))*$"
+                placeholder="0523734649">
+              <label for="tel">電話番号</label>
+            </p>
+
+            <!-- Netlify が提供する「キャプチャ機能」を用いるには以下のコードを記述する
+                 (「キャプチャ」機能とは、車の絵を選べなど、人であるかの確認機能のこと -->
+            <div data-netlify-recaptcha="true"></div>
+
+            <!-- 送信ボタン -->
+            <!-- type="submit" で、送信ボタンになる -->
+            <input type="submit" value="送信">
+          </form>
+        </article>
+      </section>
+    </main>
+
+    <!-- フッター -->
+    <footer class="footer">©Seaside</footer>
+  </body>
+</html>
