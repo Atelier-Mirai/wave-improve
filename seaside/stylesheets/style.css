@@ -10,8 +10,9 @@
 @import "_header.css";
 @import "_layout.css";
 @import "_literature.css";
+@import "_main.css";
 @import "_navigation.css";
-@import "_scroll_snap.css";
+@import "_smooth_scroll.css";
 @import "_splash.css";
-@import "_recent.css";
+@import "_recipe.css";
 @import "_video.css";

@@ -1,0 +1,14 @@
+/*=====================================================================
+  main (主要部)
+=====================================================================*/
+
+.main {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto auto auto;
+  row-gap: 20px;
+
+  .recipe     { grid-column: 1; grid-row: 1; }
+  .literature { grid-column: 1; grid-row: 2; }
+  .contact    { grid-column: 1; grid-row: 3; }
+}

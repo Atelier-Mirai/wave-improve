@@ -4,5 +4,5 @@
 
 html {
   scroll-behavior: smooth;  /* ゆっくり遷移する */
-  scroll-padding-top: 30px; /* 上に高さ30px空ける */
+  scroll-padding-top: 80px; /* メニューの高さ80px空ける */
 }

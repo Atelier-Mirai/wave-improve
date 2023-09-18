@@ -34,28 +34,10 @@ body {
   grid-column: 1 / -1;
 }
 
-main {
+.main {
   grid-row: main;
 }
 
 .footer {
   grid-row: foot;
-}
-
-/*  見出し設定  */
-.logo {
-  position: fixed;
-  left: 10px;
-  @media (width >= 768px) { left: 20px; }
-  top:  10px;
-  width: 5em;
-}
-
-
-/*  ナビゲーション位置  */
-#nav {
-  position: absolute;
-  z-index: 2;
-  top:   20px;
-  right: 20px;
 }

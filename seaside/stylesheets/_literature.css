@@ -2,21 +2,19 @@
   文学紹介
 =====================================================================*/
 .literature {
-  width: max(80%, 700px);
-  margin: 0 auto;
-
   background: #67a70c80;
 
   & article {
-    /* 段組指定 */
-    /* column-count 又は column-widthを使用する */
-    /* 二段組にする */
-    column-count: 2;
-    /* 列幅を300pxにする*/
-    /* column-width: 300px; */
-
-    /* 列間を2emにする */
-    column-gap: 2em;
+    @media (width >= 768px) {
+      /* 段組指定 */
+      /* column-count 又は column-widthを使用する */
+      /* 二段組にする */
+      column-count: 2;
+      /* 列幅を300pxにする*/
+      /* column-width: 300px; */
+      /* 列間を2emにする */
+      column-gap: 2em;
+    }
   }
 
   & article p {
